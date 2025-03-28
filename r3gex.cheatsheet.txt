@@ -1,0 +1,128 @@
+---
+syntax: bash
+tags: [ personal, linux, regex, grep ]
+---
+# /=========================================\
+# ||  RRRRRR                               ||
+# ||  RR   RR   eee   gggggg   eee  xx  xx ||
+# ||  RRRRRR  ee   e gg   gg ee   e   xx   ||
+# ||  RR  RR  eeeee  ggggggg eeeee    xx   ||
+# ||  RR   RR  eeeee      gg  eeeee xx  xx ||
+# ||                  ggggg                ||
+# \=========================================/
+               fresh forensics
+
+            --------------------
+               REGEX PATTERS
+            --------------------
+
+# Emails
+grep -oP '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+
+# Passwords
+
+ # Moderate Complexity
+grep -oP '\b(?=[A-Za-z0-9]*[A-Z])(?=[A-Za-z0-9]*[a-z])(?=[A-Za-z0-9]*\d)(?=[A-Za-z0-9]*[\W_])[A-Za-z0-9\W_]{8,}\b'
+
+ # Stronger Complexity
+grep -oP '\b(?=[A-Za-z0-9]*[A-Z])(?=[A-Za-z0-9]*[a-z])(?=[A-Za-z0-9]*\d)(?=[A-Za-z0-9]*[\W_])[A-Za-z0-9\W_]{12,}\b'
+
+# Usernames
+grep -oP '\b[a-zA-Z0-9_-]+\b'
+
+# IPV4 IP Addresses
+grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
+
+# IPV6 IP Addresses
+grep -oP '\b(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}\b'
+
+# US Phone Numbers
+grep -oP '\b(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}\b'
+
+# Validating leading Credit Cards like Visa, Mastercard, etc.
+grep -oP '\b(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9]{2})[0-9]{12})\b'
+
+# Social Security Numbers
+grep -oP '\b\d{3}-\d{2}-\d{4}\b'
+
+# Passwords On Linux
+grep -irE '(password|pwd|pass)[[:space:]]*=[[:space:]]*[[:alpha:]]+' *
+
+# Searching For Domains
+grep -oP '(?:https?://)?([a-zA-Z0-9.-]+\.(com|net|org|edu|gov|io|co|us|uk|ca))(?:/[^\s]*)?'
+
+# Base64
+grep -P -o '[A-Za-z0-9+/=]{20,}'
+
+# AWS Access Key ID
+grep -oP AKIA[0-9A-Z]{16}
+
+# AWS Secret Access Key
+grep -oP [A-Za-z0-9/+=]{40}
+
+# Both AWS access key ID and secret access key
+grep -oP 'AKIA[0-9A-Z]{16}|[A-Za-z0-9/+=]{40}'
+
+# Android #
+
+# List How Many Times The Device Was Rebooted
+ settings list global|grep "boot_count="|cut -d= -f2|head -n 1|xargs echo "Booted:"|sed 's/$/ times/g'
+
+# List email addresses registerd on different stuff on device(Android):
+dumpsys | grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
+
+# Using Grep & Regex to Search for URLs:
+----------------------------------------
+
+# Many false Positives:
+grep -oP '(?:https?://)?([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?:/[^\s]*)?' logs.txt
+
+grep -oP '[a-zA-Z0-9-]+\.[a-zA-Z]{2,}' logs.txt
+
+# Found this one to work best:
+grep -oP '(?:https?://)?([a-zA-Z0-9.-]+\.(com|net|org|edu|gov|io|co|us|uk|ca))(?:/[^\s]*)?' logs.txt
+
+# Miscellaneous Regex & Grep, Sed, Awk, Echo...
+-----------------------------------------------
+
+# The newest and most reliable method:
+ip -4 addr show docker0 | grep 'inet' | awk '{print $2}' | cut -d/ -f1
+
+# Gets just the ip address from an interface:
+ip addr show <interface> | grep 'inet ' | awk '{print $2}' | cut -d/ -f1
+
+ip addr show wlan0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1
+
+# Pull and Print to screen all interfaces from running 'ip link show':
+ip link show | awk -F': ' '/^[0-9]+: / {print $2}'
+
+# Create & Print to Screen 12 character alphnumerical string from /dev/urandom:
+tr -dc A-Za-z0-9 </dev/urandom | head -c 12
+
+# Generates Random Mac Address Using openssl & sed:
+openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
+
+# echo out time in an organized way:
+echo "$(date '+(%H:%M:%S | %d/%m/%y)')"
+
+# Using Xargs to Create Multiple Directories:
+---------------------------------------------
+
+# Create File:
+touch Directories.txt
+
+# Create Directory Names In File:
+dir_one
+dir_two
+dir_three
+
+# Use xargs to Create The Directories:
+cat Directories.txt | xargs -I % sh -c 'echo %; mkdir %'
+
+# List Directories with tree:
+tree -d
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/

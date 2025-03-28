@@ -1,0 +1,65 @@
+---
+syntax: bash
+tags: [ personal, mullvad, countrycodes ]
+---
+================================
+┏┳┓╻ ╻╻  ╻  ╻ ╻┏━┓╺┳┓   ╻ ╻┏━┓┏┓╻
+┃┃┃┃ ┃┃  ┃  ┃┏┛┣━┫ ┃┃   ┃┏┛┣━┛┃┗┫
+╹ ╹┗━┛┗━╸┗━╸┗┛ ╹ ╹╺┻┛   ┗┛ ╹  ╹ ╹
+=================================
+        FRESH FORENSICS
+
+----------------------------------
+# Every Hosting Country With Code:
+----------------------------------
+
+   - Albania         {al}
+   - Australia       {au}
+   - Austria         {at}
+   - Belgium         {be}
+   - Brazil          {br}
+   - Bulgaria        {bg}
+   - Canada          {ca}
+   - Chile           {cl}
+   - Colombia        {co}
+   - Croatia         {hr}
+   - Cyprus          {cy}
+   - Denmark         {dk}
+   - Estonia         {ee}
+   - Finland         {fi}
+   - France          {fr}
+   - Germany         {de}
+   - Greece          {gr}
+   - Hungary         {hu}
+   - Indonesia       {id}
+   - Ireland         {ie}
+   - Israel          {il}
+   - Italy           {it}
+   - Japan           {jp}
+   - Malaysia        {my}
+   - Mexico          {mx}
+   - Netherlands     {nl}
+   - Nigeria         {ng}
+   - Norway          {no}
+   - Peru            {pe}
+   - Philippines     {ph}
+   - Poland          {pl}
+   - Portugal        {pt}
+   - Romania         {ro}
+   - Serbia          {rs}
+   - Singapore       {sg}
+   - Slovakia        {sk}
+   - Slovenia        {si}
+   - Spain           {es}
+   - Sweden          {se}
+   - Switzerland     {ch}
+   - Thailand        {th}
+   - Turkey          {tr}
+   - UK              {gb}
+   - Ukraine         {ua}
+   - USA             {us}
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/

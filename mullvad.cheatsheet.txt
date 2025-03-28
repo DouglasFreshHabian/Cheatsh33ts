@@ -1,0 +1,473 @@
+---
+syntax: bash
+tags: [ android, personal, mullvad, vpn ]
+---
+                    ================================
+                    ┏┳┓╻ ╻╻  ╻  ╻ ╻┏━┓╺┳┓   ╻ ╻┏━┓┏┓╻
+                    ┃┃┃┃ ┃┃  ┃  ┃┏┛┣━┫ ┃┃   ┃┏┛┣━┛┃┗┫
+                    ╹ ╹┗━┛┗━╸┗━╸┗┛ ╹ ╹╺┻┛   ┗┛ ╹  ╹ ╹
+                    =================================
+                            FRESH FORENSICS
+
+                         --------------------
+                         # Account Commands #
+                         --------------------
+
+ mullvad account login [0000111122223333]                          # Set your account
+
+ mullvad account get                                               # Show account info
+
+ mullvad account list-devices                                      # List device names in the account
+
+# Server Commands:
+------------------
+
+ mullvad relay list                                                # List server locations
+
+ mullvad relay set location se mma                                 # Server & City {Sweden/Malmo}
+
+ mullvad relay set location se mma se-mma-wg-001                   # Select a specific server {Country, City, Server}
+
+ mullvad relay set location se-mma-wg-001                          # Or {Server Name}
+
+ mullvad connect                                                   # Connect
+
+ mullvad disconnect                                                # Disconnect
+
+ mullvad relay update                                              # Force an update of the server location list
+
+ mullvad status                                                    # Check your connection status
+
+ mullvad status -v                                                 # Check your connection status with verbosity
+
+# Use OpenVPN over TCP:
+-----------------------
+
+    ---------------------------------------------------------------------------------
+    'This can help if you are not able to connect with WireGuard or OpenVPN over UDP'
+    ---------------------------------------------------------------------------------
+
+ mullvad relay set tunnel-protocol openvpn                         # Set tunnel openvpn
+
+ mullvad relay set tunnel openvpn --transport-protocol tcp         # Use TCP for transport-protocol
+
+# Lockdown Mode & Auto-Connect:
+-------------------------------
+
+ mullvad auto-connect set on                                       # Auto-connect on start-up
+
+ mullvad lan set allow                                             # Enable LAN access
+
+ mullvad lockdown-mode get                                         # Check Lock Down Mode
+
+ mullvad lockdown-mode set on                                      # Enable Lock Down Mode
+
+ mullvad lockdown-mode set off                                     # Disable Lock Down Mode
+
+# Using mullvad-exclude:
+------------------------
+
+ mullvad-exclude {program}                                         # Start a new process excluded from Mullvad
+
+ = Example: 'run a connection check outside of the VPN tunnel'
+
+ = mullvad-exclude curl {https://am.i.mullvad.net/connected}
+
+# Using mullvad split-tunnel:
+-----------------------------
+
+ mullvad split-tunnel add {pid}                                    # Exclude a process from Mullvad that is already running
+
+ mullvad split-tunnel list                                         # List the PIDs of all the processes that are currently excluded
+
+ mullvad split-tunnel delete {pid}                                 # To restore a previously excluded processes
+
+ mullvad split-tunnel clear                                        # To restore all previously excluded processes
+
+# DNS content blockers:
+----------------------
+
+ mullvad dns set default --help                                    # To view the help
+
+ mullvad dns set default {--block-ads} {--block-trackers}
+  {--block-malware} {--block-gambling} {--block-adult-content}     # To enable all DNS filters except social media
+
+ mullvad dns set default                                           # Turn off content blockers
+
+        --------------------------------------------------------------
+        'You can only use a public DNS server with WireGuard protocol'
+        --------------------------------------------------------------
+
+        -----------------------------------------------------------
+        'but you can use a local DNS server with OpenVPN protocol'.
+        -----------------------------------------------------------
+
+ mullvad dns set custom '1.1.1.1'                                  # Set a custom DNS server
+
+ mullvad dns set default                                           # Reset DNS
+
+# Use Bridge mode (OpenVPN):
+----------------------------
+
+ mullvad relay set tunnel-protocol openvpn                         # Enable Bridge mode (using Shadowsocks proxies)
+
+ mullvad relay set tunnel openvpn --transport-protocol tcp
+
+ mullvad bridge set state on
+
+ mullvad bridge set location se mma se-mma-br-001                  # Select a specific bridge server
+
+ mullvad bridge set location any                                   # Set the location back to automatic
+
+ mullvad bridge set state auto                                     # Set Bridge mode back to automatic
+
+ mullvad relay set tunnel openvpn --transport-protocol any
+
+ mullvad relay set tunnel-protocol any
+
+# Make custom server lists:
+---------------------------
+
+ mullvad custom-list                                               # View the custom list options
+
+ mullvad custom-list new {Favorites}                               # Create a new custom list
+
+ mullvad custom-list edit add Favorites se-mma-wg-001              # Add a specific [server], [city] or [country]
+
+ mullvad custom-list edit add Favorites se got
+
+ mullvad custom-list edit add Favorites se
+
+ mullvad relay set custom-list Favorites                           # Select your custom list
+
+ mullvad custom-list edit remove Favorites se-mma-wg-001           # Remove a specific [server],[city] or [country] from the list
+
+ mullvad custom-list edit remove Favorites se got
+
+ mullvad custom-list edit remove Favorites se
+
+ mullvad custom-list edit rename {Favorites} {Favourites}          # Rename a custom list
+
+ mullvad custom-list list                                          # List all your custom lists and their content
+
+ mullvad custom-list delete {Favourites}                           # Delete a custom list
+
+# Report a problem:
+----------------------
+
+ mullvad-problem-report collect --output report.log                # Create an anonymized log file
+
+ mullvad-problem-report send --report report.log --email           # Send the log file
+  your@email.address --message {"Describe problem".}
+
+# Reset settings:
+-----------------
+
+ mullvad factory-reset                                             # Performs a factory reset on all settings, deletes app logs 
+                                                                   # and cache files, disconnects the app, and logs you out
+# CLI commands for using WireGuard:
+-----------------------------------
+
+ mullvad account login {1234123412341234}                          # Set your account
+
+ mullvad tunnel get                                                # Verify your WireGuard key
+
+ mullvad tunnel set wireguard rotate-key                           # Generate a WireGuard key
+
+ mullvad relay set tunnel-protocol wireguard                       # Set the protocol to WireGuard
+
+ mullvad relay set location se                                     # Select a country
+
+ mullvad connect                                                   # Connect
+
+ mullvad status -v                                                 # Status
+
+ mullvad relay set tunnel-protocol openvpn                         # Change from WireGuard to OpenVPN protocol
+
+# Change The Key Rotation Interval:
+-----------------------------------
+
+ mullvad tunnel set wireguard --rotation-interval 72               # Set it to every 3 days
+
+        ---------------------------------------------------------------------------------
+        'Manages automatic key rotation interval (hours). Default is 720 hours (30 days)'.
+        ----------------------------------------------------------------------------------
+
+ mullvad relay set tunnel wireguard --ip-version ipv6              # Use IPv6 to connect to WireGuard servers
+
+ mullvad relay set tunnel wireguard --port 123                     # Use a specific WireGuard server port
+
+ mullvad relay set tunnel wireguard --port any                     # Set the port back to automatic
+
+# Use WireGuard TCP obfuscation:
+--------------------------------
+
+ mullvad obfuscation set mode udp2tcp                              # Set obfuscation to udp2tcp
+
+        ----------------------------------------------------------------------------------
+        'Does not currently work if you connect to a Mullvad server using its IPv6 address'
+        ----------------------------------------------------------------------------------
+
+ mullvad status -v                                                 # Check if obfuscation is on
+
+ mullvad obfuscation set mode auto                                 # Set WireGuard TCP obfuscation back to automatic
+
+ mullvad tunnel set wireguard --quantum-resistant on               # Use a quantum resistant WireGuard tunnel
+
+ mullvad status -v                                                 # Check if it's on
+
+ mullvad tunnel set wireguard --quantum-resistant off              # Disable the use of a quantum resistant tunnel
+
+# Multihop:
+-----------
+
+ mullvad relay set tunnel wireguard --use-multihop on              # Enable Multihop
+
+ mullvad relay set tunnel wireguard entry location dk              # Select the entry server {first hop}
+
+ mullvad relay set tunnel wireguard entry location dk cph          # Select either a {country}, {city} or a specific {server}
+
+ mullvad relay set tunnel wireguard entry location dk cph dk-cph-wg-001
+
+ mullvad relay set location se                                     # Select the exit server {second hop}
+
+ mullvad relay set location se got                                 # Select either a {country}, {city} or a specific {server}
+
+ mullvad relay set location se-got-wg-001
+
+ mullvad status                                                    # Check the status
+
+ mullvad status -v                                                 # Get Status with Verbosity
+
+ mullvad relay set tunnel wireguard --use-multihop off             # Turn off multihop
+
+# Use apisocks5 Utility To Make a Bridged Connection to Mullvad API via Proxies:
+--------------------------------------------------------------------------------
+
+ /opt/Mullvad\ VPN/resources/apisocks5 -verbose
+
+ mullvad api-access add socks5 remote {apisocks5} '127.0.0.1 1080'
+
+ mullvad api-access list
+
+ mullvad api-access test 3
+
+ mullvad api-access disable 1
+
+ mullvad api-access disable 2
+
+ mullvad account get
+
+# Troubleshooting:
+------------------
+
+# The mullvad-daemon does not start:
+
+  1.) Try to start it using:
+
+      sudo systemctl start mullvad-daemon
+
+  2.) If it does not help then run:
+
+      sudo /usr/bin/mullvad-daemon -v
+
+# The Mullvad GUI does not start:
+
+  1.) Try to kill the Mullvad app GUI using:
+
+      killall mullvad-gui
+
+  2.) start it without GPU acceleration with this command:
+
+      /opt/Mullvad\ VPN/mullvad-vpn --disable-gpu
+
+# Mullvad API:
+--------------
+
+ curl 'https://am.i.mullvad.net/connected'
+
+ curl 'https://am.i.mullvad.net/ip'
+
+ curl 'https://am.i.mullvad.net/city'
+
+ curl 'https://am.i.mullvad.net/country'
+
+ curl 'https://am.i.mullvad.net/json'
+
+# Connection Test:
+------------------
+
+ firefox 'https://mullvad.net/en/check'
+
+ curl 'https://mullvad.net/en/check'
+
+# Favorite Servers & Country Codes:
+-----------------------------------
+
+   - Switzerland     {ch}
+   - Denmark         {dk}
+   - New Zealand     {nz}
+   - Sweden          {se}
+   - USA             {us}
+
+# Every Hosting Country With Code:
+----------------------------------
+
+   - Albania         {al}
+   - Australia       {au}
+   - Austria         {at}
+   - Belgium         {be}
+   - Brazil          {br}
+   - Bulgaria        {bg}
+   - Canada          {ca}
+   - Chile           {cl}
+   - Colombia        {co}
+   - Croatia         {hr}
+   - Cyprus          {cy}
+   - Denmark         {dk}
+   - Estonia         {ee}
+   - Finland         {fi}
+   - France          {fr}
+   - Germany         {de}
+   - Greece          {gr}
+   - Hungary         {hu}
+   - Indonesia       {id}
+   - Ireland         {ie}
+   - Israel          {il}
+   - Italy           {it}
+   - Japan           {jp}
+   - Malaysia        {my}
+   - Mexico          {mx}
+   - Netherlands     {nl}
+   - Nigeria         {ng}
+   - Norway          {no}
+   - Peru            {pe}
+   - Philippines     {ph}
+   - Poland          {pl}
+   - Portugal        {pt}
+   - Romania         {ro}
+   - Serbia          {rs}
+   - Singapore       {sg}
+   - Slovakia        {sk}
+   - Slovenia        {si}
+   - Spain           {es}
+   - Sweden          {se}
+   - Switzerland     {ch}
+   - Thailand        {th}
+   - Turkey          {tr}
+   - UK              {gb}
+   - Ukraine         {ua}
+   - USA             {us}
+
+# Relay List Commands:
+----------------------
+
+ mullvad relay list | grep -P '^\s*us-'                           # List All Available Relays For United States
+
+  - U.S. == {us}
+
+ mullvad relay list | grep -P '^\s*se-'                           # List All Available Relays For Sweden
+
+  - Sweden == {se}
+
+# Randomly Pick Server From List Of Servers:
+--------------------------------------------
+
+ - U.S. Servers:
+
+    mullvad relay set location us
+
+    mullvad relay list | grep -P '^\s*us-' | awk '{print $1}' | shuf -n 1
+
+    mullvad relay get
+
+ - Sweden Servers:
+
+    mullvad relay set location se
+
+    mullvad relay list | grep -P '^\s*se-' | awk '{print $1}' | shuf -n 1
+
+    mullvad relay get
+
+ - Any Server In The World:
+
+        ----------------------------------
+        'You cannot run this command 2x
+        without time between each command'
+        ----------------------------------
+
+    mullvad relay set location any
+
+# Pull Every Country & Code From Relay List:
+--------------------------------------------
+
+# Using Grep:
+-------------
+
+mullvad relay list | grep -E '^[A-Za-z]+ \([a-z]{2}\)'
+
+# Using Sed:
+------------
+
+mullvad relay list | sed -n '/^[A-Za-z]\+ (\([a-z]\{2\}\))/p'
+
+# Using Awk:
+------------
+
+mullvad relay list | awk '/^[A-Za-z]+ \([a-z]{2}\)/'
+
+# Bash One Liners To Randomly Pull Server From Relay List & Connect:
+--------------------------------------------------------------------
+
+ - U.S.:
+
+    server=$(mullvad relay list | grep -P '^\s*us-' | awk '{print $1}' | shuf -n 1) && mullvad relay set location $server
+
+# With Status Update:
+---------------------
+
+    server=$(mullvad relay list | grep -P '^\s*us-' | awk '{print $1}' | shuf -n 1) && mullvad relay set location $server && mullvad relay get
+
+ - Sweden:
+
+    server=$(mullvad relay list | grep -P '^\s*se-' | awk '{print $1}' | shuf -n 1) && mullvad relay set location $server
+
+# With Status Update:
+---------------------
+
+    server=$(mullvad relay list | grep -P '^\s*se-' | awk '{print $1}' | shuf -n 1) && mullvad relay set location $server && mullvad relay get
+
+# VERIFYING SIGNATURES:
+-----------------------
+
+ wget 'https://mullvad.net/media/mullvad-code-signing.asc'                                  # Download Signing Key
+
+ gpg --import mullvad-code-signing.asc                                                      # Import Signing Key
+
+ gpg --fingerprint admin@mullvad.net                                                        # Verify Key Installation
+
+# Sign The Key {Create Key If Needed}:
+--------------------------------------
+
+ gpg --gen-key                                                                              # Create Key
+
+ gpg --sign-key admin@mullvad.net                                                           # Sign Key
+
+# VERIFY MULLVAD VPN APP:
+-------------------------
+
+ wget --trust-servers-names 'https://mullvad.net/en/download/app/arm-deb/latest'            # Download App-(Linux)-(Rpi5)-(Arm64)
+
+        ---------------------------------------------------------------------
+        'In this example, we are using:{Arm64}-{Debian/Ubuntu}-{Stable Image}'
+        ---------------------------------------------------------------------
+                                                                                            # Download Signature
+ wget --trust-servers-names 'https://cdn.mullvad.net/app/desktop/releases/2025.4/MullvadVPN-2025.4_arm64.deb.asc'
+
+ gpg --verify MullvadVPN-2025.4_arm64.deb.asc                                               # Verify App:
+
+                                __  __                     __
+                               / /_/ /  ___   ___ ___  ___/ /
+                              / __/ _ \/ -_) / -_) _ \/ _  / 
+                              \__/_//_/\__/  \__/_//_/\_,_/
+

@@ -1,0 +1,92 @@
+---
+syntax: bash
+tags: [ personal, docker, linux ]
+---
+
+#                                      FRESH FORENSICS                                      
+#                ::.                                                                           
+#                **-                                                                           
+#         :**:**:**-                    =*.                  :*.                                
+#         .--.--.--:   .**.             =*.                  :*.                               
+#      +*+:**:**:**-+*=.****+=.   :*******. :*****.  .=****+.:*.  -**: -*****. :*+****:         
+#      :---------------=****+.  .=*-   :**.+*.   :*-.**.   . :*:**+. .+*.   -*-:**.             
+#      =*****************=      .++     =*.*+    .*+:*-      :*+=*=  .********=:*:              
+#       ****************-        :*+.  =*- -*+. .+*: =*-  .*::*. .**: -*=  .*: :*:  --.         
+#       .*************+.           -+*+-.   .-+*+-.   .=+*+: :+.   :+: .=+*+-. .+. .::.         
+#         .=********:.                                                                      
+#                                                                                           
+
+                              -------------------------------
+                              ###     DOCKER COMMANDS    ###
+                              -------------------------------
+
+
+# Utilize Docker Secrets for Sensitive Data Management
+
+ docker secret create my_secret /path/to/super-secret-data.txt
+
+ docker service create --name web --secret my_secret nginx:latest
+
+# Configuring the container to use an unprivileged user is the best way to prevent privilege escalation attacks.
+
+ docker run -u 4000 alpine
+
+# Limit capabilities (Grant only specific capabilities, needed by a container)
+
+ docker run --cap-drop all --cap-add CHOWN alpine
+
+# Prevent in-container privilege escalation
+
+ --security-opt=no-new-privileges
+
+# Run containers with a read-only filesystem using --read-only flag.
+
+ docker run --read-only alpine sh -c 'echo "whatever" > /tmp'
+
+ docker run --read-only --tmpfs /tmp alpine sh -c 'echo "whatever" > /tmp/file'
+
+# To detect secrets in images:
+
+ https://github.com/GitGuardian/ggshield
+
+ https://github.com/deepfence/SecretScanner
+
+# To detect misconfigurations in Docker:
+
+ https://github.com/goodwithtech/dockle
+
+ https://www.inspec.io/docs/reference/resources/docker/
+
+ https://dev-sec.io/baselines/docker/
+
+ https://github.com/docker/docker-bench-security
+
+# Keep the Docker daemon logging level at info
+
+ ps aux | grep '[d]ockerd.*--log-level' | awk '{for(i=1;i<=NF;i++) if ($i ~ /--log-level/) print $i}'
+
+# Juice Shop Docker Container Container
+
+ docker pull bkimminich/juice-shop
+
+ docker run --rm -p 3000:3000 bkimminich/juice-shop
+
+ Browse to http://localhost:3000⁠
+
+# Run HackTricks Locally
+
+ # Download latest version of hacktricks
+
+  git clone https://github.com/HackTricks-wiki/hacktricks
+
+ # Run the docker container indicating the path to the hacktricks folder
+
+  {docker run -d --rm -p 3337:3000 --name hacktricks -v
+  $(pwd)/hacktricks:/app ghcr.io/hacktricks-wiki/hacktricks-cloud/translator-image
+  bash -c "cd /app && git config --global --add safe.directory /app && git pull &&
+  MDBOOK_PREPROCESSOR__HACKTRICKS__ENV=dev mdbook serve --hostname 0.0.0.0"}
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/

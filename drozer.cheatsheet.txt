@@ -1,0 +1,216 @@
+---
+syntax: bash
+tags: [ personal, adb, android, drozer ]
+---
+-            ..                    ..:.
+-          ..o..                  .r..
+-            ..a..  . ....... .  ..nd
+-              ro..idsnemesisand..pr
+-              .otectorandroidsneme.
+-           .,sisandprotectorandroids+.
+-         ..nemesisandprotectorandroidsn:.
+-        .emesisandprotectorandroidsnemes..
+-      ..isandp,..,rotecyayandro,..,idsnem.
+-      .isisandp..rotectorandroid..snemisis.
+-      ,andprotectorandroidsnemisisandprotec.
+-     .torandroidsnemesisandprotectorandroid.
+-     .snemisisandprotectorandroidsnemesisan:
+-     .dprotectorandroidsnemesisandprotector.
+                 fresh forensics
+
+--------------------------------------------------
+############### Drozer Commands ##################
+--------------------------------------------------
+
+**Connect to Drozer:**
+
+- Download Drozer Agent Apk [agent-debug.apk](https://github.com/WithSecureLabs/drozer-agent/releases)
+
+- Install the apk to device
+
+  ```bash
+  # Install drozer apk using ADB
+  adb install agent-debug.apk
+  ```
+
+- Launch the drozer app
+
+  ```bash
+  adb shell monkey -p com.mwr.dz -c 1
+  ```
+
+- Starting the ADB Server
+
+  ```bash
+  adb forward tcp:31415 tcp:31415
+  ```
+
+- Connect to Drozer Desktop Server
+
+  ```bash
+  drozer console connect --server <desktop_ip>
+
+  # e.g.:
+  drozer console connect --server 192.168.100.5
+  ```
+
+**Find an android package:**
+
+```bash
+# Lists all packages using Drozer
+run app.package.list
+
+# Lists packages containing the specified keyword using Drozer
+run app.package.list -f adb shell pm list packages 'keyword'
+
+# e.g.:
+# run app.package.list -f adb shell pm list packages 'diva'
+```
+
+**List basic information about an android package:**
+
+```bash
+run app.package.info -a <package_name_of_the_apk>
+
+# e.g.:
+# run app.package.info -a jakhar.aseem.diva
+```
+
+**Show AndroidManifest.xml of an android package:**
+
+```bash
+run app.package.manifest <package_name_of_the_apk>
+
+# e.g.:
+# run app.package.manifest jakhar.aseem.diva
+```
+
+**Show Attack surface (common weakness) of an android package:**
+
+```bash
+run app.package.attacksurface <package_name_of_the_apk>
+
+# e.g.:
+# run app.package.attacksurface jakhar.aseem.diva
+```
+
+**Lists packages which the Backup flag is enabled:**
+
+```bash
+run app.package.backup
+```
+
+**Lists packages which the Debuggable flag is enabled:**
+
+```bash
+run app.package.debuggable
+```
+
+**List activities and intent filters of an android package using Drozer:**
+
+```bash
+# List activities
+run app.activity.info -a <package_name_of_the_apk>
+
+# List intent filters
+run app.activity.info -i <package_name_of_the_apk>
+
+# List booth
+run app.activity.info -i -a <package_name_of_the_apk>
+
+# e.g.:
+# run app.activity.info -a jakhar.aseem.diva
+# run app.activity.info -i jakhar.aseem.diva
+# run app.activity.info -i -a jakhar.aseem.diva
+```
+
+**Launch an activity of an android package using Drozer:**
+
+```bash
+# List activities
+run app.activity.start --component <package_name_of_the_apk> <activity_name>
+
+# e.g.:
+# run app.activity.start --component jakhar.aseem.diva jakhar.aseem.diva.MainActivity
+```
+
+**List exported and unexported content providers of an android package using Drozer:**
+
+```bash
+# List exported content providers
+run app.provider.info -a <package_name_of_the_apk>
+
+# List unexported content providers
+run app.provider.info -u -a <package_name_of_the_apk>
+
+# e.g.:
+# run app.provider.info -a jakhar.aseem.diva
+# run app.provider.info -u -a jakhar.aseem.diva
+```
+
+**Investigate Android package content providers for potential vulnerabilities using Drozer:**
+
+```bash
+run scanner.provider.finduris <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.provider.finduris jakhar.aseem.diva
+```
+
+**Investigate Android package content providers for potential SQL Injections vulnerabilities using Drozer:**
+
+```bash
+run scanner.provider.injection <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.provider.injection jakhar.aseem.diva
+```
+
+**Find tables accessible through SQL injection in a Android package using Drozer:**
+
+```bash
+run scanner.provider.sqltables <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.provider.sqltables jakhar.aseem.diva
+```
+
+**Investigate Android package content providers for basic directory traversal vulnerabilities using Drozer:**
+
+```bash
+run scanner.provider.traversal <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.provider.traversal jakhar.aseem.diva
+```
+
+**Investigate Android package for browsable activities that can be invoked from the web browser using Drozer:**
+
+```bash
+run scanner.activity.browsable <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.activity.browsable jakhar.aseem.diva
+```
+
+**Investigate Android package native components for potential vulnerabilities using Drozer:**
+
+```bash
+run scanner.misc.native <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.misc.native jakhar.aseem.diva
+```
+
+**Investigate Android package for secret codes that can be used from the dialer using Drozer:**
+
+```bash
+run scanner.misc.secretcodes <package_name_of_the_apk>
+
+# e.g.:
+# run scanner.misc.secretcodes jakhar.aseem.diva
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/
