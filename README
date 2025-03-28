@@ -1,0 +1,31 @@
+  ____ _                _       _     __________ _       
+ / ___| |__   ___  __ _| |_ ___| |__ |___ /___ /| |_ ___ 
+| |   | '_ \ / _ \/ _` | __/ __| '_ \  |_ \ |_ \| __/ __|
+| |___| | | |  __/ (_| | |_\__ \ | | |___) |__) | |_\__ \
+ \____|_| |_|\___|\__,_|\__|___/_| |_|____/____/ \__|___/
+
+This repo contains personal cheatsheets that I have created for various linux tasks on 
+the command line. All of the cheatsheets are compatible and used with the 'cheat' tool,
+which is available both on github as well as on debian based systems with snap. In fact,
+if you run 'snap info cheat' in the terminal, this is what you will see:
+
+$snap info cheat
+name:      cheat
+summary:   cheat allows to create and view interactive cheatsheets on the command-line.
+publisher: Michael (bernermic)
+store-url: https://snapcraft.io/cheat
+contact:   micha@bernerwalz.de
+license:   unset
+description: |
+  cheat allows you to create and view interactive cheatsheets on the command-line.
+  It was designed to help remind *nix system administrators of options for commands
+  that they use frequently, but not frequently enough to remember.
+  Source comes from https://github.com/cheat
+
+I have taken the liberty to add ascii art to most of the cheatsheets but feel free to
+alter them, add to them, etc. I have included and cheatsheet called, 'syntax' that
+shows you the general syntax for creating the header for cheatsheets, which allows
+you to reference, search and parse sheets or parts of them from the terminal. For
+a better understanding of how to use cheat, see the github page:
+
+  https://github.com/cheat/cheat
