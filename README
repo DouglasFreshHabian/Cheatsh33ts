@@ -1,8 +1,68 @@
+https://ziadoua.github.io/m3-Markdown-Badges/badges/Ubuntu/ubuntu1.svg  https://ziadoua.github.io/m3-Markdown-Badges/badges/Shell/shell1.svg
+
+
   ____ _                _       _     __________ _       
  / ___| |__   ___  __ _| |_ ___| |__ |___ /___ /| |_ ___ 
 | |   | '_ \ / _ \/ _` | __/ __| '_ \  |_ \ |_ \| __/ __|
 | |___| | | |  __/ (_| | |_\__ \ | | |___) |__) | |_\__ \
  \____|_| |_|\___|\__,_|\__|___/_| |_|____/____/ \__|___/
+
+Cheatsh33ts
+
+This repository contains my personal collection of Linux command-line cheatsheets. Each cheatsheet 
+is designed to be used with the cheat tool, which provides quick access to command references 
+directly from the terminal.
+
+<a href="https://asciinema.org/a/WuQQ4AN8YaXkn5p4Q6AW74bZv" target="_blank"><img src="https://asciinema.org/a/WuQQ4AN8YaXkn5p4Q6AW74bZv.svg" /></a>
+
+About the cheat Tool
+
+The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
+It's especially useful for system administrators and developers who need quick reminders of command 
+options without digging through documentation.
+
+You can install cheat on Debian-based systems via Snap:
+
+snap install cheat
+
+snap info cheat
+
+This will display details about the package:
+
+name:      cheat  
+summary:   cheat allows you to create and view interactive cheatsheets on the command line.  
+publisher: Michael (bernermic)  
+store-url: https://snapcraft.io/cheat  
+contact:   micha@bernerwalz.de  
+license:   unset  
+description: |  
+  cheat allows you to create and view interactive cheatsheets on the command-line.  
+  It was designed to help remind *nix system administrators of options for commands  
+  that they use frequently, but not frequently enough to remember.  
+  Source comes from https://github.com/cheat  
+
+Cheatsheets Included
+
+Many of the cheatsheets in this repository include ASCII art for a bit of extra flair, 
+but feel free to modify them as needed.
+
+https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/android.png
+Android Debug Bridge - (ADB)
+
+For reference, I've included a syntax.cheatsheet.txt file, which outlines the general 
+structure for creating cheatsheet headers. These headers allow you to search, reference, 
+and parse specific sections of a cheatsheet directly from the terminal.
+
+Getting Started
+
+To learn more about using cheat, creating your own cheatsheets, and customizing color 
+schemes, check out the official GitHub page:
+
+🔗
+🔗 cheat on GitHub
+
+
+
 
 This repo contains personal cheatsheets that I have created for various linux tasks on 
 the command line. All of the cheatsheets are compatible and used with the 'cheat' tool,
