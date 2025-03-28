@@ -1,11 +1,15 @@
 <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Ubuntu/ubuntu1.svg" alt="Ubuntu Badge" />
 <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Shell/shell1.svg" alt="Shell Badge" />
-
+<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Linux/linux1.svg" alt="Linux Badge" />
   ____ _                _       _     __________ _       
- / ___| |__   ___  __ _| |_ ___| |__ |___ /___ /| |_ ___ 
+ / ___| |__   ___  __ _| |_ ___| |__ |___ /___ /| |_ ___ ™️
 | |   | '_ \ / _ \/ _` | __/ __| '_ \  |_ \ |_ \| __/ __|
 | |___| | | |  __/ (_| | |_\__ \ | | |___) |__) | |_\__ \
- \____|_| |_|\___|\__,_|\__|___/_| |_|____/____/ \__|___/
+ \____|_| |_|\___|\__,_|\__|___/_| |_|____/____/ \__|___/ 
+
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=17F710&center=true&width=443&lines=Personal+interactive+cheatsheets;on+the+command-line..." alt="Typing SVG" />
+</a>
 
 <h2>Cheatsh33ts</h2>
 <p>This repository contains my personal collection of Linux command-line cheatsheets. Each cheatsheet 
@@ -16,19 +20,20 @@ directly from the terminal.</p>
   <img src="https://asciinema.org/a/WuQQ4AN8YaXkn5p4Q6AW74bZv.svg" />
 </a>
 
-<h2>About the cheat Tool</h2>
-
-The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
+<h2>About the Cheat Tool</h2>
+<p>The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
 It's especially useful for system administrators and developers who need quick reminders of command 
-options without digging through documentation.
+options without digging through documentation.</p>
 
-You can install cheat on Debian-based systems via Snap:
+### ✅ Install cheat on Debian-based Systems via Snap
 
-snap install cheat
+You can install **cheat** on Debian-based systems via Snap by running the following commands:
 
-snap info cheat
+```bash
+✔️ snap install cheat
+✔️ snap info cheat
 
-This will display details about the package:
+### This will display details about the package:👇
 
 name:      cheat  
 summary:   cheat allows you to create and view interactive cheatsheets on the command line.  
@@ -42,23 +47,26 @@ description: |
   that they use frequently, but not frequently enough to remember.  
   Source comes from https://github.com/cheat  
 
-<h2>Cheatsheets Included</h2>
-
-Many of the cheatsheets in this repository include ASCII art for a bit of extra flair, 
-but feel free to modify them as needed.
+<h3>😎 Cheatsheets Included</h3>
 
 <h3>Android Debug Bridge - (ADB)</h3>
 <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/android.png" alt="Android Debug Bridge" />
 
-For reference, I've included a syntax.cheatsheet.txt file, which outlines the general 
+<p>📌 Pin this to your notes</p>
+<p>For reference, I've included a syntax.cheatsheet.txt file, which outlines the general 
 structure for creating cheatsheet headers. These headers allow you to search, reference, 
-and parse specific sections of a cheatsheet directly from the terminal.
+and parse specific sections of a cheatsheet directly from the terminal.</p>
 
 <h2>Getting Started</h2>
 
-To learn more about using cheat, creating your own cheatsheets, and customizing color 
-schemes, check out the official GitHub page:
+<p>To learn more about using cheat, creating your own cheatsheets, and customizing color 
+schemes, check out the official GitHub page:</p>
 
-🔗 cheat on GitHub
+🔗 [cheat](https://github.com/cheat)
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=debian,docker,github,linux,ubuntu,bash,androidstudio" />
+  </a>
+</p>
 
