@@ -23,9 +23,10 @@ description: |
   Source comes from https://github.com/cheat
 
 I have taken the liberty to add ascii art to most of the cheatsheets but feel free to
-alter them, add to them, etc. I have included and cheatsheet called, 'syntax' that
+make changes to them. I have included a cheatsheet called, 'syntax.cheatsheet.txt' that
 shows you the general syntax for creating the header for cheatsheets, which allows
 you to reference, search and parse sheets or parts of them from the terminal. For
-a better understanding of how to use cheat, see the github page:
+a better understanding of how to use cheat, create your own cheatsheets and change the
+chroma colorschemes, visit the github page:
 
   https://github.com/cheat/cheat
