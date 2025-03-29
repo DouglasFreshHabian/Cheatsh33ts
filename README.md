@@ -59,7 +59,8 @@ These are my personal collection of Linux command-line cheatsheets. Each cheatsh
 
 # Cheatsheets Included 😎
 
-### ADB (Android Debug Bridge) 
+### ADB (Android Debug Bridge) <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Android/android1.svg" alt="Android" />
+
             
 
 
