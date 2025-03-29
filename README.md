@@ -48,13 +48,14 @@ You can install `cheat` on Debian-based systems via Snap by running the followin
 ```bash
    snap install cheat
 ```
+
 For further installation and configuration instructions, see the installation page over at the master branch for cheat, [INSTALLING.md][].
 
 # What Are Cheatsh33ts❓ 
 These are my personal collection of Linux command-line cheatsheets. Each cheatsh33t is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
-# 📍Important
-####  For your reference, I’ve attached a syntax.cheatsheet.txt file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign "tags" to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
+# 📍 Important
+#### For your reference, I’ve attached a syntax.cheatsheet.txt file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
 
 
