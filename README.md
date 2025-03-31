@@ -39,9 +39,9 @@ It's especially useful for system administrators and developers who need quick r
 options without digging through documentation. To learn more about using cheat, creating your own cheatsheets, 
 and customizing color schemes, check out the official GitHub page: 🔗 [cheat](https://github.com/cheat)
 
-# Installing Cheat:
+# Installing Cheat:✔️
 
-### ✔️ Install cheat on Debian-based Systems via Snap
+### Install `cheat` on Debian-based Systems via `Snap`: 
 
 You can install `cheat` on Debian-based systems via Snap by running the following commands:
 
