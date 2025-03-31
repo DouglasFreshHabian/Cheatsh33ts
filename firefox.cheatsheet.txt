@@ -1,0 +1,57 @@
+---
+syntax: bash
+tags: [ firefox, linux ]
+---
+#   _____ _           __
+#  |  ___(_)_ __ ___ / _| _____  __
+#  | |_  | | '__/ _ \ |_ / _ \ \/ /
+#  |  _| | | | |  __/  _| (_) >  <
+#  |_|   |_|_|  \___|_|  \___/_/\_\
+
+# 1. Launching Firefox from the Terminal
+# You can launch the Firefox browser by typing the following command:
+firefox
+
+# This command opens Firefox just like you would by clicking the application on your desktop.
+
+# 2. Open Firefox with a Specific URL
+# To open Firefox with a specific URL, you can use:
+firefox https://linuxconfig.org
+
+# Or, you can specify the option to open it in a new tab or new window:
+firefox -new-tab https://linuxconfig.org
+firefox -new-window https://linuxconfig.org
+
+# 3. Open Multiple Websites in Separate Tabs
+# To open multiple websites, use the -url option:
+firefox -url https://linuxconfig.org https://google.com
+
+# 4. Search When Firefox Opens
+# If you want Firefox to perform a search immediately on startup, use:
+firefox -search "linux tutorials"
+
+# 5. Start Firefox in Private Mode
+# To start Firefox in private mode, use the following command:
+firefox -private
+
+# 6. Open a Private Window (Without Permanent Private Browsing Mode)
+# If you want a private window but not permanent private browsing mode (optionally, you can specify a URL):
+firefox -private-window https://linuxconfig.org
+
+# 7. Open Firefox in Kiosk Mode
+# The --kiosk option allows you to open a URL without the Firefox UI, making it full screen. 
+# It’s useful for display PCs where you don't want users leaving the page. Use ALT + F4 to close the window.
+firefox --kiosk https://linuxconfig.org
+
+# 8. Launch Firefox in Safe Mode
+# If you're troubleshooting Firefox and want to skip loading extensions or custom settings, you can open it in safe mode:
+firefox -safe-mode
+
+# 9. Managing Firefox Profiles
+# Firefox stores personal information like bookmarks and passwords in "profiles." You can manage these profiles with the Profile Manager.
+# To open the Profile Manager:
+firefox -ProfileManager
+
+# 10. Launch Firefox with a Specific Profile
+# To launch Firefox with a particular profile (e.g., "linuxconfig"), use the following command:
+firefox -P "linuxconfig"
