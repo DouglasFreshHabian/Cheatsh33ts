@@ -1,4 +1,4 @@
-# Cheatsh33ts 📙📘📕
+# Cheatsh33ts: 📙📘📕
 
 <a href="https://git.io/typing-svg">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=17F710width=443&lines=Personal+interactive+cheatsheets;on+the+command-line..." alt="Typing SVG" />
@@ -8,7 +8,7 @@
   <img src="https://asciinema.org/a/WuQQ4AN8YaXkn5p4Q6AW74bZv.svg" />
 </a>
 
-# What Are Cheatsheets❔
+# What Are Cheatsheets:❔
 
 Cheatsheets are plain-text files with no file extension, and are named
 according to the command used to view them:
@@ -39,7 +39,7 @@ It's especially useful for system administrators and developers who need quick r
 options without digging through documentation. To learn more about using cheat, creating your own cheatsheets, 
 and customizing color schemes, check out the official GitHub page: 🔗 [cheat](https://github.com/cheat)
 
-# Installing Cheat
+# Installing Cheat:
 
 ### ✔️ Install cheat on Debian-based Systems via Snap
 
@@ -51,18 +51,24 @@ You can install `cheat` on Debian-based systems via Snap by running the followin
 
 For further installation and configuration instructions, see the installation page over at the master branch for cheat, [INSTALLING.md][].
 
-# What Are Cheatsh33ts❓ 
+# What Are Cheatsh33ts:❓ 
 These are my personal collection of Linux command-line cheatsheets. Each cheatsh33t is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
-# Important 📍
+# Important: 📍
 #### For your reference, I’ve attached a ![syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
-# Cheatsheets Included 😎
-
-
-
-### ADB (Android Debug Bridge) <img src="https://raw.githubusercontent.com/DouglasFreshHabian/Cheatsh33ts/4e775f3a349f7b339ff31ef74bbd1e75272a60b0/graphics/svg/android1.svg" alt="android1 badge" />            
-
+# Cheatsheets Included: 😎
+- [x] [adb.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb.cheatsheet.txt) 
+- [x] [countrycodes.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes.cheatsheet.txt)
+- [x] [d0cker.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)
+- [x] [drozer.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)
+- [x] [firefox.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox.cheatsheet.txt)
+- [x] [mullvad.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad.cheatsheet.txt)
+- [x] [r3gex.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex.cheatsheet.txt)
+- [x] [syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt)
+- [ ] linux.forensic.analysis
+- [ ] linux.process.investigation       
+- [ ] nmcli.master.cheatsheet.txt
 
 
 [INSTALLING.md]: https://github.com/cheat/cheat/blob/master/INSTALLING.md
