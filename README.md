@@ -65,15 +65,15 @@ These are my personal collection of Linux command-line cheatsheets. Each cheatsh
 
 
 
-
-
-
-
-
-
-
 [INSTALLING.md]: https://github.com/cheat/cheat/blob/master/INSTALLING.md
 [cheatsheets]:   https://github.com/cheat/cheatsheets
-[Releases]:      https://github.com/cheat/cheat/releases
 
-<!-- Fresh Forensics, LLC 2025 -->
+
+
+<!--
+  ____ _                _       _     __________ _       
+ / ___| |__   ___  __ _| |_ ___| |__ |___ /___ /| |_ ___ ™️
+| |   | '_ \ / _ \/ _` | __/ __| '_ \  |_ \ |_ \| __/ __|
+| |___| | | |  __/ (_| | |_\__ \ | | |___) |__) | |_\__ \
+ \____|_| |_|\___|\__,_|\__|___/_| |_|____/____/ \__|___/ 
+            Fresh Forensics, LLC 2025 -->
