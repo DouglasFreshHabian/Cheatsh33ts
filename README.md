@@ -33,7 +33,7 @@ The `cheat` executable includes no cheatsheets, but [community-sourced
 cheatsheets are available][cheatsheets]. You will be asked if you would like to
 install the community-sourced cheatsheets the first time you run `cheat`.
 
-# About the Cheat Tool 🔧
+# About the Cheat Tool: 🔧
 The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
 It's especially useful for system administrators and developers who need quick reminders of command 
 options without digging through documentation. To learn more about using cheat, creating your own cheatsheets, 
@@ -57,15 +57,17 @@ These are my personal collection of Linux command-line cheatsheets. Each cheatsh
 # Important: 📍
 #### For your reference, I’ve attached a ![syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
-# Cheatsheets Included: 😎
-- [x] [adb.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb.cheatsheet.txt)                           - adb android commands
-- [x] [countrycodes.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes.cheatsheet.txt)         - list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)
-- [x] [d0cker.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)                     - docker commands
-- [x] [drozer.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)                     - drozer commands, android agent & drozer server, bug bounty
-- [x] [firefox.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox.cheatsheet.txt)                   - commands to interact with firefox from linux command line
-- [x] [mullvad.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad.cheatsheet.txt)                   - commands for interacting with mullvad cli
-- [x] [r3gex.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex.cheatsheet.txt)                       - miscellaneous commands using regex with grep, sed, awk, etc.
-- [x] [syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt)                     - show the syntax for the headers, yaml format
+# Cheatsheets Included: 
+
+
+- [x] [adb.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb.cheatsheet.txt)                          adb android commands
+- [x] [countrycodes.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes.cheatsheet.txt)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)
+- [x] [d0cker.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)                     docker commands
+- [x] [drozer.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker.cheatsheet.txt)                    drozer commands, android agent & drozer server, bug bounty
+- [x] [firefox.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox.cheatsheet.txt)                  commands to interact with firefox from linux command line
+- [x] [mullvad.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad.cheatsheet.txt)                  commands for interacting with mullvad cli
+- [x] [r3gex.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex.cheatsheet.txt)                      miscellaneous commands using regex with grep, sed, awk, etc.
+- [x] [syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt)                    show the syntax for the headers, yaml format
 - [ ] linux.forensic.analysis
 - [ ] linux.process.investigation       
 - [ ] nmcli.master.cheatsheet.txt
