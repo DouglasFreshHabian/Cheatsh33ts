@@ -85,7 +85,7 @@ grep -oP '(?:https?://)?([a-zA-Z0-9.-]+\.(com|net|org|edu|gov|io|co|us|uk|ca))(?
 # Miscellaneous Regex & Grep, Sed, Awk, Echo...
 -----------------------------------------------
 
-# The newest and most reliable method:
+# The most reliable method to get ip address from interface:
 ip -4 addr show docker0 | grep 'inet' | awk '{print $2}' | cut -d/ -f1
 
 # Gets just the ip address from an interface:
