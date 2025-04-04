@@ -78,3 +78,9 @@ firefox -ProfileManager
 # 10. Launch Firefox with a Specific Profile
 # To launch Firefox with a particular profile (e.g., "linuxconfig"), use the following command:
 firefox -P "linuxconfig"
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/
+github.com/DouglasFreshHabian
