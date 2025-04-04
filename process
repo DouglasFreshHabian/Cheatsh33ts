@@ -1,0 +1,93 @@
+---
+syntax: bash
+tags: [ linux, processes, personal ]
+---
+                             lx  lXWK.            
+                           .xodk0xccdO.           
+                          ,xccccd0dcccdll         
+                         o:oKkocccxKxdloO         
+                       .kc0OxdMNkxocxxoX.         
+                      .O,,;Oc,K,0lxOkdkk          
+                  .:lldxOl,co...c,'o0dcdO     .'. 
+              ..:xl,,,,,;kx,d;.okOl...d.   :l0xKco
+            'odNl,,,,,,,ldKd,O'cWMNc..'k.llKc.o'.l
+       .Wolcdk,0ol,,,,l;,,,lOXc:',:.,,;ccdl.'l':l 
+        c0x;,lkOd:k:,lk0,,,,,dd.      o;l;,lOOo,  
+        .0l,,,::l0:oooloKc,,,,;kO.  .;0xdx0dd,    
+          :dd:,,ckkoxxo0d0k;,,dxox::KK0Okd;       
+            .dXOkdoldO0dO0lxkKkl'.:dXNc           
+           ...:MMMx0WMMWNo   .'x...:ld,           
+          ,WMMMMMW.  :WMMN    .NdcOl:             
+      ...xXMMXdc,..lXMMWl                         
+ ..',,,;;;cXXXKk;;;WMWMWxoc.                      
+ ..',,,;;;;;;;;;;;;lc,;,'...                      
+     .....'''''.....                              
+
+  --------------------------------------------------------
+    )------https://github.com/DouglasFreshHabian-------(
+  --------------------------------------------------------
+
+# Process Investigation Cheatsheet
+
+# 1. Investigating a Process: Look at Its Parents
+# To check the parent process of a specific process, use the following command:
+pstree -sap <pid>
+
+# If the parent is not init (1), this might give you an idea of where the process originated.
+
+# 2. Check if the Process Belongs to a Systemd Service
+# You can check the status of a process to see if it's part of a systemd service:
+systemctl status <pid>
+
+# 3. View the Full Command Line of the Process
+# In the `top` command, you can toggle the full command line by pressing 'c'.
+# Alternatively, you can use the `ps` command to see the full command line:
+ps -o args -p <pid>
+
+# 4. Analyze the Executable
+# You can copy the executable file to the disk (even if it's deleted) for analysis:
+cp /proc/<pid>/exe /tmp/suspicious_file
+
+# Then, check the type of the file:
+file /tmp/suspicious_file
+
+# Don’t run it, but you can inspect the file using commands such as:
+# strings, hexdump, od, or xxd for deeper inspection of its contents.
+# Example:
+strings /tmp/suspicious_file
+
+# **Warning**: Don't use `ldd` on the file, as this might execute the program.
+
+# 5. Check the Process’s Environment Variables
+# The environment variables might provide additional clues about the process. Use this command to view them:
+xargs -0 printf "%s\n" < /proc/<pid>/environ
+
+# 6. Check Which Files the Process Holds Open
+# To see which files the process is interacting with, use the `lsof` command:
+lsof -p <pid>
+
+# This might show if the process is writing logs or has any network sockets open.
+
+# 7. Check the Logs for Suspicious Activity
+# To investigate the logs around the time the process started, first get the exact time it began running:
+ps -o lstart -p <pid>
+
+# Then, use `journalctl` (for systemd systems) to look at the logs for suspicious events:
+journalctl -S 'YYYY-mm-dd HH:MM'
+
+# 8. Check if Someone Used SSH or Ran `sudo`
+# Review logs for potential SSH login attempts or `sudo` commands by looking in journal logs:
+# Example:
+journalctl -S 'YYYY-mm-dd HH:MM' | grep ssh
+journalctl -S 'YYYY-mm-dd HH:MM' | grep sudo
+
+# 9. Convert the Process Start Time to a Readable Format for `journalctl`
+# You can convert the start time from `ps` to a format that `journalctl` can read by using the `date` command:
+date +"%Y-%m-%d %H:%M" --date="$(ps --no-header -olstart -p <PID>)"
+
+	  __  __                     __
+	 / /_/ /  ___   ___ ___  ___/ /
+	/ __/ _ \/ -_) / -_) _ \/ _  / 
+	\__/_//_/\__/  \__/_//_/\_,_/
+        github.com/DouglasFreshHabian
+

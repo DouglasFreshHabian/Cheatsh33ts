@@ -1,0 +1,311 @@
+---
+syntax: bash
+tags: [ linux, forensics, personal ]
+---
+
+                          +@@@@@@@@@        
+                        @..:..:..::-@@@@    
+                       #.=%%+=+****==:*@@   
+                      @::*++**+**+**%@@#@@  
+                       @..:...:-##*#*#*##@  
+                        @@-@@=*+++=++*+@@.  
+                      @@@@@@@@@@@@@@@@@@    
+                    @@@@     @@@@@@@.       
+                 @@@@@                      
+             #@@@@@@                        
+          @@@@@@@                           
+       @@@@@@@@                             
+     @@@@@.@@                               
+   @@@@=@@@@                                
+ @@@-@@@                                    
+   @@                                       
+ 
+            linux forensic analysis
+
+## SSH Known Hosts and User Activity Investigation
+
+### Analyze SSH known hosts for suspicious connections
+cat /home/$USER/.ssh/known_hosts
+
+### Review recently used files for user activity
+cat /home/$USER/.recently-used.xbel
+
+## Webshell Investigation
+
+### Search for PHP files in /var/www/html directory and display their modification timestamps
+find /var/www/html -type f -name "*.php" -printf "%T@ %f\n" | sort -n | awk '{print strftime("%Y-%m-%d %H:%M:%S", $1), $2}'
+
+### Monitor Apache configuration files
+tail -f /etc/apache2/*/*
+
+### Monitor Nginx configuration files
+tail -f /etc/nginx/*/*
+
+## Cron Tasks Investigation
+
+### View cron service configuration managed by systemd
+cat /lib/systemd/system/cron.service
+
+### View the cron tasks scheduled for a specific user
+crontab –u <user> -l
+
+### View system-wide crontab file containing system cron tasks
+cat /etc/crontab
+
+### Check all files in /etc/cron
+tail -f /etc/cron.*/*
+
+### List all user-specific cron files in cron spool directory
+ls /var/spool/cron/crontabs/*
+
+### View contents of atjobs file, which contains at jobs scheduled by the at command
+cat /var/spool/cron/atjobs
+
+## Services and systemd Investigation
+
+### List enabled services and check their associated start commands
+for service in $(systemctl list-unit-files --type=service | grep enabled | awk '{print $1}'); do echo "Service: $service"; systemctl cat $service | grep ExecStart= | sed 's/^/Command: /'; echo "--------------------------------------------------"; done
+
+### List custom systemd unit files in /etc/systemd/system/
+ls /etc/systemd/system/
+
+### List systemd unit files in /lib/systemd/system/
+ls /lib/systemd/system/
+
+### List systemd system generators
+ls /lib/systemd/system-generators/*
+
+### View contents of init.d scripts
+more -f /etc/init.d/*
+
+### List systemd user units in /lib/systemd/user/
+ls /lib/systemd/user/*
+
+### List custom systemd user units in /etc/systemd/user/
+ls /etc/systemd/user/*
+
+### List user systemd generators in /etc/systemd/user-generators/
+ls /etc/systemd/user-generators/*
+
+### List user systemd generators in /usr/local/lib/systemd/user-generators/
+ls /usr/local/lib/systemd/user-generators/*
+
+### List user systemd generators in /usr/lib/systemd/user-generators/
+ls /usr/lib/systemd/user-generators/*
+
+## SSH Daemon Investigation
+
+### View the SSH service configuration managed by systemd
+cat /lib/systemd/system/ssh.service
+
+### View the SSH daemon configuration file
+cat /etc/ssh/sshd_config
+
+### List any user-specific SSH resource files in the ~/.ssh directory
+ls ~/.ssh/rc
+
+### List system-wide SSH resource files in the /etc/ssh directory
+ls /etc/ssh/sshrc
+
+## Login Shell Investigation
+
+### Check system-wide Bash initialization file
+cat /etc/bash.bashrc
+
+### Check user-specific Bash initialization file
+cat /home/$USER/.bashrc
+
+### Check user-specific Bash profile file
+cat /home/$USER/.bash_profile
+
+### Check system-wide profile file
+cat /etc/profile
+
+### Check scripts in the /etc/profile.d directory
+cat /etc/profile.d/*
+
+### Check user-specific profile file
+cat /home/$USER/.profile
+
+### Check user-specific Bash login file
+cat /home/$USER/.bash_login
+
+### Check user-specific Bash logout file
+cat /home/$USER/.bash_logout
+
+### Check system-wide Bash logout file
+cat /etc/.bash_logout
+
+## RC Scripts Investigation
+
+### Review rc scripts
+cat /etc/rc*
+
+## Infected Binaries Investigation
+
+### Find binaries modified within the last 10 days in specified directories
+find /lib /usr/bin /usr/sbin -type f -newermt "$(date -d '10 days ago' +'%Y-%m-%d')"
+
+### List Python 3 related libraries and modules in /usr/lib directory
+ls /usr/lib/python3*
+
+## PAM Configuration Investigation
+
+### Display contents of the PAM configuration file
+cat /etc/pam.conf
+
+### Check contents of the PAM directory
+cat /etc/pam.d
+
+## MOTD Investigation
+
+### Examine the scripts responsible for generating dynamic messages displayed to users upon login
+cat /etc/update-motd.d/*
+
+## Unusual System Resources
+
+### Display system uptime and load average
+uptime
+
+### Display memory usage statistics
+free
+
+### Display disk space usage statistics
+df
+
+## Compromised Assessment Scanning
+
+### Download and use THOR Lite for scanning
+cd thorlite/
+./thor-lite-util update
+./thor-lite-linux-64
+
+## Rootkit Hunting
+
+### Detect rootkits on Linux systems
+chkrootkit
+
+### Detect rootkits on Linux systems
+rkhunter --check
+
+### Comprehensive security auditing tool that includes checks for rootkits among other security issues
+lynis audit system
+
+### Antivirus scanner for malware
+clamscan -r /
+
+### Sunlight
+git clone https://github.com/tstromberg/sunlight
+cd sunlight
+sudo ./sunlight.sh
+
+### Sandfly
+git clone https://github.com/sandflysecurity/sandfly-file-decloak
+cd sandfly-file-decloak
+python3 ./sandfly-file-decloak.py -f /etc/modules
+
+git clone https://github.com/sandflysecurity/sandfly-processdecloak
+cd sandfly-processdecloak
+sudo ./sandfly-processdecloak
+
+### Unhide
+./unhide-tcp
+./unhide-linux
+
+## Hunting and Checking Files, Processes
+
+### Inspect dir and files
+find /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec ls -la {} \;
+
+### Check running process with root priv
+ps aux | grep -i root
+
+### Check unusual network connections
+netstat -antup
+
+### Compare checksums or file hashes against known good values
+sha256sum /bin/* /sbin/* /usr/bin/* /usr/sbin/* /lib/* /lib64/* /etc/* | sort > current_checksums.txt
+
+## Investigate Loaded Kernel Modules
+
+### List loaded kernel modules
+lsmod
+
+### Get detailed information about a specific module
+modinfo <name of module>
+
+### Review configuration files that control module loading
+tail -f /etc/modprobe.d/*
+
+## Collecting Evidence
+
+### List all devices to identify the disk device for disk imaging
+lsblk
+
+### List partition tables for disk devices
+fdisk -l
+
+### Perform disk imaging to an external disk or shared folder
+dd if=/dev/sdb of=/media/sf_tmp/linux_forensic.img
+
+### Use dcfldd to perform hashing while imaging
+dcfldd if=/dev/sdb of=/media/sf_tmp/linux_forensic.img hash=sha256 hashwindow=1M hashlog=/media/sf_tmp/linux_forensic.hash
+
+## Memory Acquisition
+
+### Download AVML binary for memory acquisition
+wget https://github.com/microsoft/avml/releases/download/v0.13.0/avml
+
+### Execute AVML
+./avml memory.lime
+
+### Using LIME to perform memory dump
+git clone https://github.com/504ensicsLabs/LiME.git
+cd LiME/src; sudo make
+sudo insmod lime-$(uname -r).ko "path=/media/sf_tmp/mem.lime format=lime"
+
+## Investigation and Analysis
+
+### Install Volatility for memory analysis
+sudo git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3/
+apt install python3-pip
+pip3 install -r requirements-minimal.txt
+
+### Build Linux volatility profile for analysis
+vol3 -f memory.lime banners
+
+### Download debug symbol and convert it to json file
+wget http://ddebs.ubuntu.com/ubuntu/pool/main/l/linux/linux-image-unsigned-5.15.0-101-generic-dbgsym_5.15.0-101.111_amd64.ddeb
+git clone https://github.com/volatilityfoundation/dwarf2json.git
+cd dwarf2json
+go build
+dpkg -i linux-image-unsigned-5.15.0-101-generic-dbgsym_5.15.0-101.111_amd64.ddeb
+./dwarf2json linux --elf /usr/lib/debug/boot/vmlinux-5.15.0-101-generic > symbol.json
+cp symbol.json /path/to/volatility3/symbols/linux/
+
+### Verify volatility setup
+python3 vol.py isfinfo
+
+### Run analysis with volatility
+vol3 -f /mnt/hgfs/tmp/memory.lime linux.bash
+
+## Detection Visibility Tools
+
+### Install detection visibility tools
+https://github.com/cilium/tetragon
+https://github.com/Sysinternals/SysmonForLinux
+https://github.com/kunai-project/kunai
+https://github.com/falcosecurity/falco
+https://github.com/aquasecurity/tracee
+https://github.com/osquery/osquery
+https://github.com/chainguard-dev/osquery-defense-kit
+        
+
+       	  __  __                     __
+	 / /_/ /  ___   ___ ___  ___/ /
+	/ __/ _ \/ -_) / -_) _ \/ _  / 
+	\__/_//_/\__/  \__/_//_/\_,_/
+       ---------------------------------
+    https://github.com/DouglasFreshHabian
+

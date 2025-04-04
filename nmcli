@@ -1,0 +1,523 @@
+---
+syntax: bash
+tags: [ nmcli, wifi, personal ]
+---
+0 . .  . . .    . . .  . . .  . . .  . . .  . . .W
+O                                                W
+O                                                W
+O           ..,:codxkkOOOOOOkkxdoc:,..           W
+O      .,cdkOOOOOOOOOOOOOOOOOOOOOOOOOOkd:'.      W
+O   'cxOOOOOOOOxoc:;''......',;:loxOOOOOOOOxc'   W
+O.oOOOOOOOdc,.      ..........      .,cdOOOOOOOc.W
+OdOOOOkl'    .,:odkOOOOOOOOOOOOkdl:'.    'lkOOOOlW
+O .,,.    ,lkOOOOOOOOOOOkkOOOOOOOOOOOxl'    .,,. W
+O       lOOOOOOOdc;'.       ..';cxOOOOOOOl       W
+O      .kOOOkl'    ..,;:::;,'.     'lkOOOx.      W
+O        ...    ,lxOOOOOOOOOOOOxl,    .'.        W
+O             cOOOOOOOxdoodkOOOOOOO:             W
+O             ;xOOxc.        'cxOOx;             W
+O                     .:cc:.                     W
+O                    ;OOOOOO,                    W
+O                    .lxOOxc.                    W
+O                                                W
+O                                                W
+0 . .  . . . .. . . .  . . .  . . .  . . .  . . .W
+                                  _ _ 
+             _ __  _ __ ___   ___| (_)
+            | '_ \| '_ ` _ \ / __| | |
+            | | | | | | | | | (__| | |
+            |_| |_|_| |_| |_|\___|_|_|
+
+
+# Manage connections with NetworkManager.
+This subcommand can also be called with nmcli c.
+More information: https://networkmanager.pages.freedesktop.org/NetworkManager/NetworkManager/nmcli.html.
+
+ - List all NetworkManager connections (shows name, UUID, type and device):
+   nmcli connection
+
+ - Activate a connection:
+   nmcli connection up uuid uuid
+
+ - Deactivate a connection:
+   nmcli connection down uuid uuid
+
+ - Create an auto-configured dual stack connection:
+   nmcli connection add ifname interface_name type ethernet ipv4.method auto ipv6.method auto
+
+ - Create a static IPv6-only connection:
+   nmcli connection add ifname interface_name type ethernet ip6 2001:db8::2/64 gw6 2001:db8::1 ipv6.dns 2001:db8::1 ipv4.method ignore
+
+ - Create a static IPv4-only connection:
+   nmcli connection add ifname interface_name type ethernet ip4 10.0.0.7/8 gw4 10.0.0.1 ipv4.dns 10.0.0.1 ipv6.method ignore
+
+ - Create a VPN connection using OpenVPN from an OVPN file:
+   nmcli connection import type openvpn file path/to/vpn_config.ovpn
+
+# Manage general settings of NetworkManager.
+This subcommand can also be called with nmcli g.
+More information: https://networkmanager.pages.freedesktop.org/NetworkManager/NetworkManager/nmcli.html.
+
+ - Show the general status of NetworkManager:
+   nmcli general
+
+ - Show the hostname of the current device:
+   nmcli general hostname
+
+ - Change the hostname of the current device:
+   sudo nmcli general hostname new_hostname
+
+ - Show the permissions of NetworkManager:
+   nmcli general permissions
+
+ - Show the current logging level and domains:
+   nmcli general logging
+
+ - Set the logging level and/or domains (see man NetworkManager.conf for all available domains):
+   nmcli general logging level INFO|OFF|ERR|WARN|DEBUG|TRACE domain domain_1,domain_2,...
+
+# Run nmcli as a NetworkManager secret agent or polkit agent.
+This subcommand can also be called with nmcli a.
+More information: https://networkmanager.pages.freedesktop.org/NetworkManager/NetworkManager/nmcli.html.
+
+ - Register nmcli as a secret agent and listen for secret requests:
+   nmcli agent secret
+
+ - Register nmcli as a polkit agent and listen for authorization requests:
+   nmcli agent polkit
+
+ - Register nmcli as a secret agent and a polkit agent:
+   nmcli agent all
+
+# tldr nmcli connection
+nmcli connection
+
+# Disconnect from the Current Network:
+
+# If you’re currently connected to a network and want to disconnect, use the following command:
+nmcli connection down  <connection-name>
+
+nmcli connection down  "MyWiFiNetwork"
+
+# Disconnect from a Specific Network:
+
+# list your active connections first:
+nmcli connection show
+
+# Find the Name of Your Network Connection and disconnect:
+nmcli connection down  <connection-name>
+
+# To Disconnect All Active Connections:
+
+# If you want to disconnect from all active network connections, you can use:
+nmcli networking off
+
+# This will disable all network interfaces managed by NetworkManager.
+
+# If you want to reconnect afterward, you can use:
+nmcli networking on
+
+# To Check connectivity:
+nmcli networking connectivity check
+
+# You can find the name of your network interface using:
+nmcli device
+
+nmcli device disconnect wlan0
+
+
+# First, list all saved connections to find the exact name of the connection you want to delete:
+nmcli connection show
+
+# This will display a list of all saved network connections.
+
+# Delete the Connection:
+
+# Once you’ve identified the connection name you want to delete, use the following command:
+nmcli connection delete  <connection-name>
+
+# Replace <connection-name> with the exact name of the connection you want to delete. For example:
+nmcli connection delete  "MyWiFiNetwork"
+
+# This will completely delete the connection configuration from NetworkManager.
+
+# Verify the Deletion:
+
+# After deleting, you can verify that the connection has been removed by running:
+nmcli connection show
+
+# Deleting a connection removes the stored settings, so if you want to reconnect to that network later, you will need to create a new connection (e.g., by reconnecting to the Wi-Fi and saving it again).
+
+# To Prevent Automatic Reconnection:
+
+# First, list all saved connections to find the exact name or UUID of the connection you want to modify:
+nmcli connection show
+
+# Modify the Connection to Prevent Auto-Reconnection:
+
+# To prevent automatic reconnection, you can change the autoconnect setting for the connection. By default, most connections have autoconnect enabled. To disable it, run the following command:
+nmcli connection modify "<connection-name>" connection.autoconnect no
+
+nmcli connection modify "MyWiFiNetwork" connection.autoconnect no
+
+# You can verify that the setting has been applied by checking the connection details:
+nmcli connection show "<connection-name>"
+
+# Look for the line autoconnect to ensure it is set to no.
+
+# Re-enable Auto-Reconnection (Optional):
+
+# If you later want to re-enable auto-reconnection for that connection, you can do so by running:
+nmcli connection modify "<connection-name>" connection.autoconnect yes
+
+# Additional Settings:
+
+# If you want to modify other settings related to reconnection or behavior, here are some common options:
+
+# Set the connection to never attempt to connect automatically when NetworkManager starts: You can set the connection to not automatically connect to the network when NetworkManager starts, even if it's available. Use the autoconnect-priority setting and set it to -1 (lowest priority).
+nmcli connection modify "<connection-name>" connection.autoconnect-priority -1
+
+# Modify connections to the network with the ipv4.method properties:
+nmcli connection modify "<connection-name>" ipv4.method [auto, link-local, manual, shared, disabled]
+
+# Modify connections to the network with the 'wifi.powersave' properties:
+nmcli connection modify "<connection-name>" wifi.powersave [default, ignore, disable, enable]
+
+
+# Steps to Disable IPv6 for a Specific Connection:
+
+# First, identify the name of the connection you want to modify:
+nmcli connection show
+
+# Disable IPv6 for the Connection:
+
+# Use the following command to disable IPv6 for a specific connection:
+nmcli connection modify "<connection-name>" ipv6.method disabled
+
+# Example:
+nmcli connection modify "MyWiFiNetwork" ipv6.method disabled
+
+# Here are all the values available for the ipv6.method:
+nmcli connection modify "MyWiFiNetwork" ipv6.method [ignore, auto, dhcp, link-local, manual, shared, disabled]
+
+# 15. Verify the Changes:
+
+# After making the changes, you can verify that IPv6 has been disabled for the connection:
+nmcli connection show "<connection-name>"
+
+# Here is a list of 'properties' that can be used with ipv6.
+[method, dns, dns-search, dns-options, dns-priority, addresses, gateway, routes, route-metric, route-table, routing-rules, ignore-auto-routes, ignore-auto-dns, never-default, may-fail, required-timeout, ip6-privacy, addr-gen-mode, ra-timeout, dhcp-duid, dhcp-iaid, dhcp-timeout, dhcp-send-hostname, dhcp-hostname, dhcp-hostname-flags, token]
+
+# Restart the Connection (if needed):
+
+# To apply the changes immediately, you may need to bring the connection down and up again:
+nmcli connection down "<connection-name>"
+
+nmcli connection up "<connection-name>" 
+
+# This will disconnect and reconnect the specified network connection, applying the changes you made.
+
+# Disabling IPv6 Globally:
+
+# If you want to disable IPv6 for the entire system (and not just a specific connection), you can do so by editing your system settings.
+
+# Edit sysctl settings:
+
+# Add the following lines to your /etc/sysctl.conf or create a custom file in /etc/sysctl.d/ (e.g., /etc/sysctl.d/99-disable-ipv6.conf)
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+# Apply the changes:
+
+# After adding the above lines, apply the changes by running:
+sudo sysctl -p
+
+# This will disable IPv6 on all interfaces.
+
+# If you're only trying to disable IPv6 for a specific connection (like a Wi-Fi network), the first method is preferable.
+
+# Show status for all devices:
+nmcli dev status
+
+# Adding a new connection using nmcli:
+nmcli connection add type <connection_type> ifname <interface> con-name <connection_name>
+
+# Here are all the varias connection types:
+[6lowpan, 802-11-olpc-mesh (olpc-mesh), 802-11-wireless (wifi), 802-3-ethernet (ethernet), adsl, bluetooth, bond, bridge, cdma, dummy, generic, gsm, infiniband, ip-tunnel, macsec, macvlan, ovs-bridge, ovs-dpdk, ovs-interface, ovs-patch, ovs-port, pppoe, team, tun, veth, vlan, vpn, vrf, vxlan, wifi-p2p, wimax, wireguard, wpan, bond-slave, bridge-slave, team-slave]
+
+# Adding a new wifi connection...
+nmcli connection add type wifi ifname wlan0 con-name fresh_forensics
+
+# Modify Connection Settings: set static ip address
+
+nmcli connection modify fresh_forensics ipv4.addresses '192.168.1.100/24' ipv4.gateway '192.168.1.1' ipv4.dns '8.8.8.8,8.8.4.4' ipv4.method manual
+
+# Show secrets:
+nmcli -show-secrets
+
+nmcli -s
+
+# Listing available Wi-Fi APs:
+nmcli device wifi list
+
+# List all of the different fields options for displaing different columns
+nmcli -f all dev wifi list
+
+	NAME  SSID  SSID-HEX  BSSID  MODE  CHAN  FREQ  RATE  SIGNAL  BARS  SECURITY  WPA-FLAGS  RSN-FLAGS  DEVICE  ACTIVE  IN-USE  DBUS-PATH 
+
+# Connect to a password-protected wifi network
+nmcli device wifi connect "$SSID" password "$PASSWORD"
+
+nmcli --ask device wifi connect "$SSID"
+
+# Showing general information and properties for a Wi-FI interface
+
+nmcli -p -f general,wifi-properties device show wlan0
+
+# Listing NetworkManager polkit permissions
+nmcli general permissions
+
+PERMISSION                                                        VALUE 
+org.freedesktop.NetworkManager.checkpoint-rollback                auth  
+org.freedesktop.NetworkManager.enable-disable-connectivity-check  yes   
+org.freedesktop.NetworkManager.enable-disable-network             yes   
+org.freedesktop.NetworkManager.enable-disable-statistics          yes   
+org.freedesktop.NetworkManager.enable-disable-wifi                yes   
+org.freedesktop.NetworkManager.enable-disable-wimax               yes   
+org.freedesktop.NetworkManager.enable-disable-wwan                yes   
+org.freedesktop.NetworkManager.network-control                    yes   
+org.freedesktop.NetworkManager.reload                             auth  
+org.freedesktop.NetworkManager.settings.modify.global-dns         auth  
+org.freedesktop.NetworkManager.settings.modify.hostname           auth  
+org.freedesktop.NetworkManager.settings.modify.own                yes   
+org.freedesktop.NetworkManager.settings.modify.system             yes   
+org.freedesktop.NetworkManager.sleep-wake                         no    
+org.freedesktop.NetworkManager.wifi.scan                          yes   
+org.freedesktop.NetworkManager.wifi.share.open                    yes   
+org.freedesktop.NetworkManager.wifi.share.protected               yes   
+
+# Show configured polkit permissions for various NetworkManager operations:
+pkaction --action-id org.freedesktop.NetworkManager.network-control --verbose
+
+# Put NetworkManager to sleep or wake it up (should only be used by system power management)
+pkaction --action-id org.freedesktop.NetworkManager.network-control --verbose
+
+# Listing NetworkManager log level and domains:
+nmcli general logging help
+
+# nmcli general logging help
+Usage: nmcli general logging { ARGUMENTS | help }
+
+ARGUMENTS := [level <log level>] [domains <log domains>]
+
+# Without any argument current logging level and domains are shown
+nmcli general logging
+
+# Changing NetworkManager logging
+
+# The first command makes NetworkManager log in DEBUG level, and only for CORE, ETHER and IP domains. 
+nmcli g log level DEBUG domains CORE,ETHER,IP
+
+# The second command restores the default logging state.
+nmcli g log level INFO domains DEFAULT
+
+# Activating a VPN connection profile requiring interactive password input
+nmcli --ask con up my-vpn-con              # activates a VPN connection profile enabling nmcli to interact with the user 
+
+# Adding a bonding master and two slave connection profiles
+
+# Add a master bond connection  
+nmcli con add type bond ifname mybond0 mode active-backup
+
+# Adding slave connections
+nmcli con add type ethernet ifname eth1 master mybond0
+
+nmcli con add type ethernet ifname eth2 master mybond0
+
+# Adding a team master and two slave connection profiles:
+
+nmcli con add type team con-name Team1 ifname Team1 config team1-master-json.conf
+
+nmcli con add type ethernet con-name Team1-slave1 ifname em1 master Team1
+
+nmcli con add type ethernet con-name Team1-slave2 ifname em2 master Team1
+
+# activate the whole setup by activating both slaves:
+
+nmcli con up Team1-slave1
+
+nmcli con up Team1-slave2
+
+# Adding a bridge and two slave profiles
+
+nmcli con add type bridge con-name TowerBridge ifname TowerBridge
+
+nmcli con add type ethernet con-name br-slave-1 ifname ens3 master TowerBridge
+
+nmcli con add type ethernet con-name br-slave-2 ifname ens4 master TowerBridge
+
+nmcli con modify TowerBridge bridge.stp no
+
+# Adding an ethernet connection profile with manual IP configuration
+
+nmcli con add con-name my-con-em1 ifname em1 type ethernet \
+ ip4 192.168.100.100/24 gw4 192.168.100.1 ip4 1.2.3.4 ip6 abbe::cafe
+
+nmcli con mod my-con-em1 ipv4.dns "8.8.8.8 8.8.4.4"
+
+nmcli con mod my-con-em1 +ipv4.dns 1.2.3.4
+
+nmcli con mod my-con-em1 ipv6.dns "2001:4860:4860::8888 2001:4860:4860::8844"
+
+nmcli -p con show my-con-em1
+
+# Convenient field values retrieval for scripting
+nmcli -g ip4.address connection show my-con-eth0
+           192.168.1.12/24
+
+nmcli -g ip4.address,ip4.dns connection show my-con-eth0
+           192.168.1.12/24
+           192.168.1.1
+
+nmcli -g ip4 connection show my-con-eth0
+           IP4:192.168.1.12/24:192.168.1.1::192.168.1.1::
+
+ This example shows retrieval of ip4 connection field values
+
+# Interactive Connection Editor:
+
+# Adding a WiFi connection profile in interactive editor
+nmcli connection edit type wifi
+
+>print
+
+# Bluetooth connection profiles:
+
+# The following uses DHCP and IPv6 autoconf for address configuration:
+nmcli connection add type bluetooth con-name "Profile for My Bluetooth Device (NAP)" autoconnect no bluetooth.type panu bluetooth.bdaddr "$BDADDR"
+
+# The modem settings depend on your device and you either need a "gsm" or a "csma" section
+nmcli connection add type bluetooth con-name "Profile for My Bluetooth Device (DUN)" autoconnect no bluetooth.type dun bluetooth.bdaddr "$BDADDR" gsm.apn apn.com
+
+# Finally, you can create a bluetooth hotspot. BlueZ implements those as a bridge
+
+# Set IP methods as "shared", so that clients get automatic IP addressing
+nmcli connection add type bluetooth con-name "My Bluetooth Hotspot" autoconnect no ifname btnap0 bluetooth.type nap ipv4.method shared ipv6.method shared
+
+# Show MAC Address:
+nmcli -f GENERAL.HWADDR device show awus036ac
+
+# Show router IP:
+nmcli -f IP4.GATEWAY device show awus036ac
+
+# Show password & QR-Code:
+nmcli dev wifi show-password
+
+# Setting Up an Access Point:
+
+# Start by enabling the Wi-Fi interface in Network Manager with:
+sudo nmcli con add con-name hotspot ifname wlan0 type wifi ssid "RaspberryTips-Wifi"
+
+# We’ll then set the access point security and password
+sudo nmcli con modify hotspot wifi-sec.key-mgmt wpa-psk
+sudo nmcli con modify hotspot wifi-sec.psk "raspberry"
+
+# And finally, configure Network Manager to run in access point mode, with shared IP addresses on this interface:
+sudo nmcli con modify hotspot 802-11-wireless.mode ap 802-11-wireless.band bg ipv4.method shared
+
+# Setting Up a VPN
+nmcli connection import type openvpn file your-connection.ovpn
+nmcli connection modify your-connection +vpn.data username=your-user-name
+nmcli connection modify your-connection ipv4.never-default true
+nmcli connection up your-connection passwd-file passwd-file
+
+# To list all VPN connections
+nmcli connection show --active | grep vpn
+
+# To connect to the VPN
+nmcli connection up your-connection passwd-file passwd-file
+
+# content of passwd-file
+# ----------------------
+# vpn.data.username=your-user-name
+# vpn.secrets.password=your-password
+# ----------------------
+
+# To disconnect from the VPN
+nmcli connection down your-connection
+
+# To delete the VPN connection
+nmcli connection delete your-connection
+
+# creates a hotspot profile and connects it. Prints the hotspot password the user should use to connect to the hotspot from other devices.
+nmcli -s dev wifi hotspot con-name QuickHotspot
+
+# print values from all fields
+nmcli -g all
+
+# Appends a Google public DNS server to DNS servers in ABC profile.
+nmcli con modify ABC +ipv4.dns 8.8.8.8
+
+# shows details for wlan0 interface; only GENERAL and WIFI-PROPERTIES sections will be shown.
+nmcli -f GENERAL,WIFI-PROPERTIES dev show wlan0
+
+# shows all available connection profiles for your Wi-Fi interface wlp3s0.
+nmcli -f CONNECTIONS device show wlp3s0
+
+# tells you whether NetworkManager is running or not.
+nmcli -t -f RUNNING general
+
+# shows the overall status of NetworkManager.
+nmcli -t -f STATE general
+
+# shows all configured connections in multi-line mode.
+nmcli -p -m multiline -f all con show
+
+# lists all currently active connections.
+nmcli connection show --active
+
+# shows all connection profile names and their auto-connect property.
+nmcli -f name,autoconnect c s
+
+# Offline use:
+
+# Creates a connection file in keyfile format without using the NetworkManager service. 
+# This allows for use of familiar nmcli syntax in situations where the service is not 
+# running, such as during system installation of image provisioning and ensures the 
+# resulting file is correctly formatted.
+nmcli --offline con add type ethernet '
+conn.id eth0 \
+conn.interface-name eth0 \
+>/sysroot/etc/NetworkManager/system-connections/eth0.nmconnection
+
+# Read and write a connection file without using the NetworkManager service, modifying some properties along the way.
+# This allows templating of the connection profiles using familiar nmcli syntax in situations where the service is not running.
+nmcli --offline con modify type ethernet '
+conn.id eth0-ipv6 \
+ipv4.method disabled \
+</sysroot/etc/NetworkManager/system-connections/eth0.nmconnection \
+>/sysroot/etc/NetworkManager/system-connections/eth0-ipv6.nmconnection
+
+# Convenient field values retrieval for scripting
+nmcli -g ip4.address connection show <connection-name>
+  192.168.1.12/24
+
+nmcli -g ip4.address,ip4.dns connection show <connection-name>
+  192.168.1.12/24
+  192.168.1.1
+
+nmcli -g ip4 connection show <connection-name>
+  IP4:192.168.1.12/24:192.168.1.1::192.168.1.1::
+
+# This example shows retrieval of ip4 connection field values via the --get-values option. Multiple comma separated fields 
+# can be provided: they will be printed one per line. If a whole section is provided instead of a single field, the name of 
+# the section will be printed followed by all the related field values on the same line. See also --terse, --mode, --fields 
+# and --escape options in nmcli(1) manual page for more customized output.
+
+
+             __  __                     __
+            / /_/ /  ___   ___ ___  ___/ /
+           / __/ _ \/ -_) / -_) _ \/ _  /
+           \__/_//_/\__/  \__/_//_/\_,_/
+           github.com/DouglasFreshHabian
