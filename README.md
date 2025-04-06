@@ -33,13 +33,13 @@ The `cheat` executable includes no cheatsheets, but [community-sourced
 cheatsheets are available][cheatsheets]. You will be asked if you would like to
 install the community-sourced cheatsheets the first time you run `cheat`.
 
-# About the Cheat Tool: 🔧
+## About the Cheat Tool: 🔧
 The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
 It's especially useful for system administrators and developers who need quick reminders of command 
 options without digging through documentation. To learn more about using cheat, creating your own cheatsheets, 
 and customizing color schemes, check out the official GitHub page: 🔗 [cheat](https://github.com/cheat)
 
-# Installing Cheat:✔️
+## Installing Cheat:✔️
 
 ### Install `cheat` on Debian-based Systems via `Snap`: 
 
@@ -47,6 +47,17 @@ You can install `cheat` on Debian-based systems via Snap by running the followin
 
 ```bash
    snap install cheat
+```
+### Install Manually
+#### Unix-like (straight from the installation page for cheat)
+On Unix-like systems, you may simply paste the following snippet into your terminal:
+
+```sh
+cd /tmp \
+  && wget https://github.com/cheat/cheat/releases/download/4.4.2/cheat-linux-amd64.gz \
+  && gunzip cheat-linux-amd64.gz \
+  && chmod +x cheat-linux-amd64 \
+  && sudo mv cheat-linux-amd64 /usr/local/bin/cheat
 ```
 
 For further installation and configuration instructions, see the installation page over at the master branch for cheat, [INSTALLING.md][].
