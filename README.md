@@ -42,6 +42,9 @@ and customizing color schemes, check out the official GitHub page: 🔗 [cheat](
 ## Installing Cheat:✔️
 
 ### Install `cheat` on Debian-based Systems via `Snap`: 
+<details>
+  
+<summary>Click here to expand</summary>
 
 You can install `cheat` on Debian-based systems via Snap by running the following commands:
 
@@ -60,18 +63,24 @@ cd /tmp \
   && sudo mv cheat-linux-amd64 /usr/local/bin/cheat
 ```
 
+You may need to need to change the version number (`4.4.2`) and the archive
+(`cheat-linux-amd64.gz`) depending on your platform.
+
+See the [releases page][releases] for a list of supported platforms.
+</details>
+
 For further installation and configuration instructions, see the installation page over at the master branch for cheat, [INSTALLING.md][].
 
 # What Are Cheatsh33ts:❓ 
 These are my personal collection of Linux command-line cheatsheets. Each cheatsh33t is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
 # Important: 📍
-#### For your reference, I’ve attached a ![syntax.cheatsheet.txt](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
+For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
 # Cheatsheets Included: 
                                                                                                                               
 - [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb)                           adb android commands                                                                         
-- [x] [countrycodes(https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
+- [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
 - [x] [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker)                     docker commands                                                                              
 - [x] [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/drozer)                     drozer commands, android agent & drozer server, bug bounty                                   
 - [x] [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox)                   commands to interact with firefox from linux command line                                    
