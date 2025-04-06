@@ -10,14 +10,14 @@
 
 # What Are Cheatsheets:❔
 
-Cheatsheets are plain-text files with no file extension, and are named
+*Cheatsheets* are plain-text files with no file extension, and are named
 according to the command used to view them:
 
 ```sh
 cheat drozer     # file is named "drozer"
 ```
 
-Cheatsheet text may optionally be preceeded by a YAML frontmatter header that
+*Cheatsheet* text may optionally be preceeded by a YAML frontmatter header that
 assigns tags and specifies syntax:
 
 ```
@@ -34,9 +34,9 @@ cheatsheets are available][cheatsheets]. You will be asked if you would like to
 install the community-sourced cheatsheets the first time you run `cheat`.
 
 ## About the Cheat Tool: 🔧
-The cheat tool allows users to create and view interactive cheatsheets for frequently used commands. 
+The `cheat` tool allows users to create and view interactive *cheatsheets* for frequently used commands. 
 It's especially useful for system administrators and developers who need quick reminders of command 
-options without digging through documentation. To learn more about using cheat, creating your own cheatsheets, 
+options without digging through documentation. To learn more about using `cheat`, creating your own *cheatsheets*, 
 and customizing color schemes, check out the official GitHub page: 🔗 [cheat](https://github.com/cheat)
 
 ## Installing Cheat:✔️
@@ -69,13 +69,13 @@ You may need to need to change the version number (`4.4.2`) and the archive
 See the [releases page][releases] for a list of supported platforms.
 </details>
 
-For further installation and configuration instructions, see the installation page over at the master branch for cheat, [INSTALLING.md][].
+For further installation and configuration instructions, see the installation page over at the master branch for `cheat`, [INSTALLING.md][].
 
 # What Are Cheatsh33ts:❓ 
-These are my personal collection of Linux command-line cheatsheets. Each *cheatsh33t* is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
+These are my personal collection of Linux command-line *cheatsh33ts*. Each *cheatsh33t* is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
 # Important: 📍
-The *cheatsh33ts* in this repo are just my personal *cheatsh33ts*, not meant to replace the community *cheatsheets* but rather just additional ones to add to your personal *cheatsheets*. After installing & configuring the cheat tool, you need to determine the path to your personal *cheetsheats*. Once you have done that, you can simply copy over the *cheatsheets* in this repo to the directory of your personal *cheatsheets*. 
+The *cheatsh33ts* in this repo are just my personal *cheatsh33ts*, not meant to replace the community *cheatsheets* but rather just additional ones to add to your personal *cheatsheets*. After installing & configuring the `cheat` tool, you need to determine the path to your personal *cheetsheats*. Once you have done that, you can simply copy over the *cheatsh33ts* in this repo to the directory of your personal *cheatsheets*. 
 
 Determine the path:
 ```bash
