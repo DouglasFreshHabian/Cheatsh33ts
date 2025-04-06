@@ -44,7 +44,7 @@ and customizing color schemes, check out the official GitHub page: 🔗 [cheat](
 ### Install `cheat` on Debian-based Systems via `Snap`: 
 <details>
   
-<summary>Click here to expand</summary>
+<summary>🖱Click here to expand</summary>
 
 You can install `cheat` on Debian-based systems via Snap by running the following commands:
 
@@ -99,10 +99,16 @@ docker         /home/user/.config/cheat/cheatsheets/community/docker         com
 docker-compose /home/user/.config/cheat/cheatsheets/community/docker-compose community,container,docker
 d0cker         /home/user/.config/cheat/cheatsheets/personal/d0cker          personal,docker
 ```
+For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal. 
 
-For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
+>**💡Tip:**
+>You can edit & create cheatsh33ts 'on the fly' using `nano` instead of `vim` which is the default editor used by `cheat`. Instead of running `cheat -e foo`, use `nano` with the full path:
 
-# Cheatsheets Included:                                                                                Description:
+```bash
+   nano /home/user/.config/cheat/cheatsheets/personal/d0cker
+```
+
+# Cheatsheets Included:                                                                               
                                                                                                                               
 - [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb)                           adb android commands                                                                         
 - [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
