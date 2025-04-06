@@ -75,6 +75,29 @@ For further installation and configuration instructions, see the installation pa
 These are my personal collection of Linux command-line cheatsheets. Each cheatsh33t is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
 # Important: 📍
+The cheatsh33ts in this repo are just my personal cheatseets, not meant to replace the community cheatsheets but rather just additional ones to add to your personal cheatsheets. After installing & configuring the cheat tool, you need to determine the path to your personal cheetsheats. Once you have done that, you can simply copy over the cheatsheets in this repo to the directory of your personal cheatsheets. 
+
+Determine the path:
+```bash
+   cheat -d
+community: /home/user/.config/cheat/cheatsheets/community
+community: /home/user/.config/cheat/cheatsheets/personal
+```
+Copy over each cheatsh33t:
+```bash
+   cd Cheatsh33ts
+   cp forensics /home/user/.config/cheat/cheatsheets/personal/forensics
+```
+You may run into a situation where you have created a cheatsh33t that you want to add but a cheatsheet already exists. When that happens, I usually just change the name of my cheatsh33t slightly. Here is an example. I created a cheatsh33t called 'docker' to find out that one already existed. 
+
+```bash
+   cheat -l docker
+title:         file:                                                         tags:
+docker         /home/user/.config/cheat/cheatsheets/community/docker         community
+docker-compose /home/user/.config/cheat/cheatsheets/community/docker-compose community,container,docker
+d0cker         /home/user/.config/cheat/cheatsheets/personal/d0cker          personal,docker
+```
+
 For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
 # Cheatsheets Included: 
