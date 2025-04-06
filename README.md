@@ -102,21 +102,22 @@ d0cker         /home/user/.config/cheat/cheatsheets/personal/d0cker          per
 
 For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal.
 
-# Cheatsheets Included: 
+# Cheatsheets Included:                                                                                Description:
                                                                                                                               
 - [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb)                           adb android commands                                                                         
 - [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
 - [x] [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker)                     docker commands                                                                              
 - [x] [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/drozer)                     drozer commands, android agent & drozer server, bug bounty                                   
 - [x] [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox)                   commands to interact with firefox from linux command line                                    
-- [x] [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad)                  commands for interacting with mullvad cli                                                    
-- [x] [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex)                      miscellaneous commands using regex with grep, sed, awk, etc.                                 
-- [x] [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax)                    show the syntax for the headers, yaml format                                                 
+- [x] [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad)                   commands for interacting with mullvad cli                                                    
+- [x] [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex)                       miscellaneous commands using regex with grep, sed, awk, etc.                                 
+- [x] [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax)                     show the syntax for the headers, yaml format                                                 
 - [x] [forensics](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/forensics)               commands to perform forensic analysis on Linux                                                                                                                                                                                                  
-- [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/process)                      Investigating processes on linux                                                                                                                                                                          
-- [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/nmcli)                          manage connections with NetworkManager                                                                                                                                                                      
-- [ ] [alfa]                                                                                             commands used on alfa adapters                                                                                                                            
-- [ ] [asciifresh]                                                                                        collection of custom ascii art
+- [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/process)                   investigating processes on linux                                                                                                                                                                          
+- [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/nmcli)                       manage connections with NetworkManager                                                                                                                                                                      
+- [ ] [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                        commands used on alfa adapters                                                                                                                            
+- [ ] [asciifresh](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                  coming soon...                                 
+- [ ] [?](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                           suggestions welcome...
 
        
 [INSTALLING.md]: https://github.com/cheat/cheat/blob/master/INSTALLING.md
