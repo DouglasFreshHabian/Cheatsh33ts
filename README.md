@@ -77,6 +77,8 @@ These are my personal collection of Linux command-line *cheatsh33ts*. Each *chea
 # Important: 📍
 The *cheatsh33ts* in this repo are just my personal *cheatsh33ts*, not meant to replace the community *cheatsheets* but rather just additional ones to add to your personal *cheatsheets*. After installing & configuring the `cheat` tool, you need to determine the path to your personal *cheetsheats*. Once you have done that, you can simply copy over the *cheatsh33ts* in this repo to the directory of your personal *cheatsheets*. 
 
+## Manually Copy Cheatsh33ts:
+
 Determine the path:
 ```bash
    cheat -d
@@ -89,6 +91,20 @@ Copy over each cheatsh33t:
    cd Cheatsh33ts
    cp forensics /home/user/.config/cheat/cheatsheets/personal/forensics
 ```
+## Automate With Bash Script:
+
+You can use the `cheatcopy.sh` Bash script to automatically copy over all of the `cheatsh33ts`. Make sure that the script is in the same directory as the cheatsh33ts you plan on copying over...
+
+Make the script executable:
+```bash
+   chmod +x cheatcopy.sh
+```
+Now simply run the Bash script:
+```bash
+   ./cheatcopy.sh
+```
+If the script gives you any issues, try replacing the `DEST_DIR` environment variable with the real path to your `personal` directory.
+
 You may run into a situation where you have created a *cheatsh33t* that you want to add but a *cheatsheet* already exists. When that happens, I usually just change the name of my cheatsh33t slightly. Here is an example. I created a *cheatsh33t* called `docker` to find out that one already existed. 
 
 ```bash
@@ -110,17 +126,17 @@ For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshH
 
 # Cheatsheets Included:                                                                               
                                                                                                                               
-- [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/adb)                           adb android commands                                                                         
-- [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
-- [x] [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/d0cker)                     docker commands                                                                              
-- [x] [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/drozer)                     drozer commands, android agent & drozer server, bug bounty                                   
-- [x] [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/firefox)                   commands to interact with firefox from linux command line                                    
-- [x] [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/mullvad)                   commands for interacting with mullvad cli                                                    
-- [x] [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/r3gex)                       miscellaneous commands using regex with grep, sed, awk, etc.                                 
-- [x] [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax)                     show the syntax for the headers, yaml format                                                 
-- [x] [forensics](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/forensics)               commands to perform forensic analysis on Linux                                                                                                                                                                                                  
-- [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/process)                   investigating processes on linux                                                                                                                                                                          
-- [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/nmcli)                       manage connections with NetworkManager                                                                                                                                                                      
+- [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/adb)                           adb android commands                                                                         
+- [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
+- [x] [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/d0cker)                     docker commands                                                                              
+- [x] [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/drozer)                     drozer commands, android agent & drozer server, bug bounty                                   
+- [x] [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/firefox)                   commands to interact with firefox from linux command line                                    
+- [x] [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/mullvad)                   commands for interacting with mullvad cli                                                    
+- [x] [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/r3gex)                       miscellaneous commands using regex with grep, sed, awk, etc.                                 
+- [x] [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/syntax)                     show the syntax for the headers, yaml format                                                 
+- [x] [forensics](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/forensics)               commands to perform forensic analysis on Linux                                                                                                                                                                                                  
+- [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/process)                   investigating processes on linux                                                                                                                                                                          
+- [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/nmcli)                       manage connections with NetworkManager                                                                                                                                                                      
 - [ ] [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                        commands used on alfa adapters                                                                                                                            
 - [ ] [asciifresh](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                  coming soon...                                 
 - [ ] [?](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                           suggestions welcome...
