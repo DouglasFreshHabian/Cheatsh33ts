@@ -76,8 +76,12 @@ These are my personal collection of Linux command-line *cheatsh33ts*. Each *chea
 
 # Important: 📍
 The *cheatsh33ts* in this repo are just my personal *cheatsh33ts*, not meant to replace the community *cheatsheets* but rather just additional ones to add to your personal *cheatsheets*. After installing & configuring the `cheat` tool, you need to determine the path to your personal *cheetsheats*. Once you have done that, you can simply copy over the *cheatsh33ts* in this repo to the directory of your personal *cheatsheets*. 
+# Copy Cheatsh33ts:
+<details>
+  
+<summary>🖱Click here to expand</summary>
 
-## Manually Copy Cheatsh33ts:
+## Manually:
 
 Determine the path:
 ```bash
@@ -105,6 +109,18 @@ Now simply run the Bash script:
 ```
 If the script gives you any issues, try replacing the `DEST_DIR` environment variable with the real path to your `personal` directory.
 
+## Finally, if you need to delete the sh33ts: 
+Determine the path to the personal directory:
+```bash
+   cheat -d
+```
+Delete all of the sh33ts:
+```bash
+   rm /home/user/.config/cheat/cheatsheets/personal/*
+```
+>**💡Important:**
+>This will delete every file in the `personal` directory
+
 You may run into a situation where you have created a *cheatsh33t* that you want to add but a *cheatsheet* already exists. When that happens, I usually just change the name of my cheatsh33t slightly. Here is an example. I created a *cheatsh33t* called `docker` to find out that one already existed. 
 
 ```bash
@@ -115,6 +131,8 @@ docker         /home/user/.config/cheat/cheatsheets/community/docker         com
 docker-compose /home/user/.config/cheat/cheatsheets/community/docker-compose community,container,docker
 d0cker         /home/user/.config/cheat/cheatsheets/personal/d0cker          personal,docker
 ```
+</details>
+
 For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal. 
 
 >**💡Tip:**
