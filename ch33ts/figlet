@@ -1,0 +1,369 @@
+---
+syntax: bash
+tags: [ figlet, ascii ]
+---
+
+    mmmm      ##               mmmm                         
+   ##"""      ""               ""##                  ##     
+ #######    ####      m###m##    ##       m####m   #######  
+   ##         ##     ##"  "##    ##      ##mmmm##    ##     
+   ##         ##     ##    ##    ##      ##""""""    ##     
+   ##      mmm##mmm  "##mm###    ##mmm   "##mmmm#    ##mmm  
+   ""      """"""""   m""" ##     """"     """""      """"  
+                      "####""  
+
+# This is a cheatsheet for figlet 
+
+# specifically for all of the numerous fonts:
+
+ascii9      (Font)  bigmono12  (Font)  future    (Font)  mono12    (Font)  smascii12  (Font)  smslant   (Font)
+ascii12     (Font)  block      (Font)  ivrit     (Font)  pagga     (Font)  smblock    (Font)  standard  (Font)
+banner      (Font)  bubble     (Font)  lean      (Font)  script    (Font)  smbraille  (Font)  term      (Font)
+big         (Font)  circle     (Font)  letter    (Font)  shadow    (Font)  smmono9    (Font)  wideterm  (Font)
+bigascii9   (Font)  digital    (Font)  mini      (Font)  slant     (Font)  smmono12   (Font)  
+bigascii12  (Font)  emboss     (Font)  mnemonic  (Font)  small     (Font)  smscript   (Font)  
+bigmono9    (Font)  emboss2    (Font)  mono9     (Font)  smascii9  (Font)  smshadow   (Font) 
+
+# figlet -f ascii9 fresh
+
+	   m""                       #     
+	 mm#mm   m mm   mmm    mmm   # mm  
+	   #     #"  " #"  #  #   "  #"  # 
+	   #     #     #""""   """m  #   # 
+	   #     #     "#mm"  "mmm"  #   # 
+
+# figlet -f ascii12 fresh
+                                                  
+    mmmm                                 mm       
+   ##"""                                 ##       
+ #######    ##m####   m####m   mm#####m  ##m####m 
+   ##       ##"      ##mmmm##  ##mmmm "  ##"   ## 
+   ##       ##       ##""""""   """"##m  ##    ## 
+   ##       ##       "##mmmm#  #mmmmm##  ##    ## 
+   ""       ""         """""    """"""   ""    "" 
+
+# figlet -f banner fresh
+                                   
+	###### #####  ######  ####  #    # 
+	#      #    # #      #      #    # 
+	#####  #    # #####   ####  ###### 
+	#      #####  #           # #    # 
+	#      #   #  #      #    # #    # 
+	#      #    # ######  ####  #    # 
+
+
+# figlet -f big fresh
+
+	  __               _     
+	 / _|             | |    
+	| |_ _ __ ___  ___| |__  
+	|  _| '__/ _ \/ __| '_ \ 
+	| | | | |  __/\__ \ | | |
+	|_| |_|  \___||___/_| |_|
+
+
+# figlet -f bigascii9 fresh
+                                   
+                                   
+	   :##                       #     
+	   #.                        #     
+	   #                         #     
+	 #####   #:##:  ###   :###:  #:##: 
+	   #     ##  #    :#  #: .#  #  :# 
+	   #     #     #   #  #:.    #   # 
+	   #     #     #####  .###:  #   # 
+	   #     #     #         :#  #   # 
+	   #     #         #  #. :#  #   # 
+	   #     #      ###:  :###:  #   # 
+	
+
+# figlet -f bigascii12 fresh
+                                                  
+                                                  
+                                                  
+	   :####                                 ##       
+	   #####                                 ##       
+	   ##                                    ##       
+	 #######    ##.####   .####:    :#####.  ##.####  
+	 #######    #######  .######:  ########  #######  
+	   ##       ###.     ##:  :##  ##:  .:#  ###  :## 
+	   ##       ##       ########  ##### .   ##    ## 
+	   ##       ##       ########  .######:  ##    ## 
+	   ##       ##       ##           .: ##  ##    ## 
+	   ##       ##       ###.  :#  #:.  :##  ##    ## 
+	   ##       ##       .#######  ########  ##    ## 
+	   ##       ##        .#####:  . ####    ##    ## 
+
+# figlet -f bigmono9 fresh
+                                   
+                                   
+	   ▒██                       █     
+	   █░                        █     
+	   █                         █     
+	 █████   █▒██▒  ███   ▒███▒  █▒██▒ 
+	   █     ██  █ ▓▓ ▒█  █▒ ░█  █▓ ▒█ 
+	   █     █     █   █  █▒░    █   █ 
+	   █     █     █████  ░███▒  █   █ 
+	   █     █     █         ▒█  █   █ 
+	   █     █     ▓▓  █  █░ ▒█  █   █ 
+	   █     █      ███▒  ▒███▒  █   █ 
+                                   
+
+# figlet -f bigmono12 fresh
+                                                  
+                                                  
+	                                                  
+	   ▒████                                 ██       
+	   █████                                 ██       
+	   ██                                    ██       
+	 ███████    ██░████   ░████▒    ▒█████░  ██░████  
+	 ███████    ███████  ░██████▒  ████████  ███████▓ 
+	   ██       ███░     ██▒  ▒██  ██▒  ░▒█  ███  ▒██ 
+	   ██       ██       ████████  █████▓░   ██    ██ 
+	   ██       ██       ████████  ░██████▒  ██    ██ 
+	   ██       ██       ██           ░▒▓██  ██    ██ 
+	   ██       ██       ███░  ▒█  █▒░  ▒██  ██    ██ 
+	   ██       ██       ░███████  ████████  ██    ██ 
+	   ██       ██        ░█████▒  ░▓████▓   ██    ██ 
+                                                  
+
+# figlet -f block fresh
+                                                  
+	    _|_|                                _|        
+	  _|      _|  _|_|    _|_|      _|_|_|  _|_|_|    
+	_|_|_|_|  _|_|      _|_|_|_|  _|_|      _|    _|  
+	  _|      _|        _|            _|_|  _|    _|  
+	  _|      _|          _|_|_|  _|_|_|    _|    _|  
+                                                  
+
+# figlet -f bubble fresh
+	  _   _   _   _   _  
+	 / \ / \ / \ / \ / \ 
+	( f | r | e | s | h )
+	 \_/ \_/ \_/ \_/ \_/ 
+	
+# figlet -f circle fresh -c
+
+          ⓕⓡⓔⓢⓗ
+
+# figlet -f digital fresh
+
+	+-+-+-+-+-+
+	|f|r|e|s|h|
+	+-+-+-+-+-+
+
+# figlet -f emboss fresh
+
+	┏━┛┏━┃┏━┛┏━┛┃ ┃
+	┏━┛┏┏┛┏━┛━━┃┏━┃
+	┛  ┛ ┛━━┛━━┛┛ ┛
+
+# figlet -f emboss2 fresh
+
+	╔═╝╔═║╔═╝╔═╝║ ║
+	╔═╝╔╔╝╔═╝══║╔═║
+	╝  ╝ ╝══╝══╝╝ ╝
+
+# figlet -f future fresh
+
+	┏━╸┏━┓┏━╸┏━┓╻ ╻
+	┣╸ ┣┳┛┣╸ ┗━┓┣━┫
+	╹  ╹┗╸┗━╸┗━┛╹ ╹
+
+# figlet -f ivrit fresh
+                         _                    __ 
+                        | |__  ___  ___ _ __ / _|
+                        | '_ \/ __|/ _ \ '__| |_ 
+                        | | | \__ \  __/ |  |  _|
+                        |_| |_|___/\___|_|  |_|  
+
+# figlet -f lean fresh
+                                                   
+	      _/_/                                _/       
+	   _/      _/  _/_/    _/_/      _/_/_/  _/_/_/    
+	_/_/_/_/  _/_/      _/_/_/_/  _/_/      _/    _/   
+	 _/      _/        _/            _/_/  _/    _/    
+	_/      _/          _/_/_/  _/_/_/    _/    _/     
+                                               
+
+# figlet -f letter fresh
+
+	FFFFF RRRR  EEEEE  SSSS H   H 
+	F     R   R E     S     H   H 
+	FFFF  RRRR  EEEE   SSS  HHHHH 
+	F     R  R  E         S H   H 
+	F     R   R EEEEE SSSS  H   H 
+
+# figlet -f mini fresh
+	  _          
+	_|_.__  _|_  
+	 | |(/__>| | 
+             
+
+# figlet -f mnemonic fresh
+
+	fresh
+
+# figlet -f mono9 fresh
+
+                                   
+	   ▄▀▀                       █     
+	 ▄▄█▄▄   ▄ ▄▄   ▄▄▄    ▄▄▄   █ ▄▄  
+	   █     █▀  ▀ █▀  █  █   ▀  █▀  █ 
+	   █     █     █▀▀▀▀   ▀▀▀▄  █   █ 
+	   █     █     ▀█▄▄▀  ▀▄▄▄▀  █   █ 
+                                   
+                                   
+# figlet -f mono12 fresh
+                                                  
+	    ▄▄▄▄                                 ▄▄       
+	   ██▀▀▀                                 ██       
+	 ███████    ██▄████   ▄████▄   ▄▄█████▄  ██▄████▄ 
+	   ██       ██▀      ██▄▄▄▄██  ██▄▄▄▄ ▀  ██▀   ██ 
+	   ██       ██       ██▀▀▀▀▀▀   ▀▀▀▀██▄  ██    ██ 
+	   ██       ██       ▀██▄▄▄▄█  █▄▄▄▄▄██  ██    ██ 
+	   ▀▀       ▀▀         ▀▀▀▀▀    ▀▀▀▀▀▀   ▀▀    ▀▀ 
+                                                  
+                                                  
+# figlet -f pagga fresh
+
+	░█▀▀░█▀▄░█▀▀░█▀▀░█░█
+	░█▀▀░█▀▄░█▀▀░▀▀█░█▀█
+	░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀
+
+# figlet -f script fresh
+	 _                 _     
+	| |               | |    
+	| |  ,_    _   ,  | |    
+	|/  /  |  |/  / \_|/ \   
+	|__/   |_/|__/ \/ |   |_/
+	|\                       
+	|/                       
+
+# figlet -f shadow fresh
+
+	  _|               |     
+	 |    __| _ \  __| __ \  
+	 __| |    __/\__ \ | | | 
+	_|  _|  \___|____/_| |_| 
+                         
+
+# figlet -f slant fresh
+	    ____               __  
+	   / __/_______  _____/ /_ 
+	  / /_/ ___/ _ \/ ___/ __ \
+	 / __/ /  /  __(__  ) / / /
+	/_/ /_/   \___/____/_/ /_/ 
+                           
+
+# figlet -f small fresh
+	  __            _    
+	 / _|_ _ ___ __| |_  
+	|  _| '_/ -_|_-< ' \ 
+	|_| |_| \___/__/_||_|
+	                     
+# figlet -f smascii9 fresh
+                    
+	 ."             ]   
+	.dm  ,m  m,  m, ]., 
+	 ]   P `]`] ] ' ]`] 
+	 ]   [  ]""  "\ ] ] 
+	 ]   [  'b/ 'm/ ] ] 
+                    
+                    
+# figlet -f smascii12 fresh
+                         
+	  mm                .,   
+	 ]P"                ][   
+	]WWW  WdW[ dWb .dWW,]bWW,
+	 ][   W`  ]bmd[]bm,`]P ][
+	 ][   W   ]P""` ""W,][ ][
+	 ][   W   'Wmm[]mmd[][ ][
+	 '`   "    '""  """ '` '`
+                         
+                         
+# figlet -f smblock fresh
+
+	▗▀▖         ▌  
+	▐  ▙▀▖▞▀▖▞▀▘▛▀▖
+	▜▀ ▌  ▛▀ ▝▀▖▌ ▌
+	▐  ▘  ▝▀▘▀▀ ▘ ▘
+
+# figlet -f smbraille fresh
+
+	 ⣰⡁ ⡀⣀ ⢀⡀ ⢀⣀ ⣇⡀
+	 ⢸  ⠏  ⠣⠭ ⠭⠕ ⠇⠸
+
+# figlet -f smmono9 fresh
+
+                    
+	 ▗▀             ▐   
+	▗▟▄  ▖▄  ▄▖  ▄▖ ▐▗▖ 
+	 ▐   ▛ ▘▐▘▐ ▐ ▝ ▐▘▐ 
+	 ▐   ▌  ▐▀▀  ▀▚ ▐ ▐ 
+	 ▐   ▌  ▝▙▞ ▝▄▞ ▐ ▐ 
+                    
+                    
+# figlet -f smmono12 fresh
+                         
+	  ▄▄                ▗▖   
+	 ▐▛▀                ▐▌   
+	▐███  █▟█▌ ▟█▙ ▗▟██▖▐▙██▖
+	 ▐▌   █▘  ▐▙▄▟▌▐▙▄▖▘▐▛ ▐▌
+	 ▐▌   █   ▐▛▀▀▘ ▀▀█▖▐▌ ▐▌
+	 ▐▌   █   ▝█▄▄▌▐▄▄▟▌▐▌ ▐▌
+	 ▝▘   ▀    ▝▀▀  ▀▀▀ ▝▘ ▝▘
+                         
+                         
+# figlet -f smscript fresh
+                    
+	|\  ,_   _  ,  |)   
+	|/ /  | |/ / \_|/\  
+	|_/   |/|_/ \/ |  |/
+	|)                  
+
+# figlet -f smshadow fresh
+
+	  _|          |    
+	  _|_|-_)(_-<   \  
+	_|_|\___|___/_| _| 
+                   
+# figlet -f smshadow fresh
+
+	  _|          |    
+	  _|_|-_)(_-<   \  
+	_|_|\___|___/_| _| 
+	                   
+# figlet -f smslant fresh
+
+	   ___            __ 
+	  / _/______ ___ / / 
+	 / _/ __/ -_|_-</ _ \
+	/_//_/  \__/___/_//_/
+                     
+# figlet -f standard fresh
+
+	  __               _     
+	 / _|_ __ ___  ___| |__  
+	| |_| '__/ _ \/ __| '_ \ 
+	|  _| | |  __/\__ \ | | |
+	|_| |_|  \___||___/_| |_|
+                         
+
+# figlet -f term fresh
+
+	fresh
+
+# figlet -f wideterm fresh
+
+	ｆｒｅｓｈ
+                                                                              
+
+--------------------------------------------------------          
+  )------https://github.com/DouglasFreshHabian-------(
+--------------------------------------------------------                 
+             __  __                     __
+            / /_/ /  ___   ___ ___  ___/ /
+          / __/ _ \/ -_) / -_) _ \/ _  /
+          \__/_//_/\__/  \__/_//_/\_,_/
+          github.com/DouglasFreshHabian
