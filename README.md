@@ -8,7 +8,7 @@
   <img src="https://asciinema.org/a/WuQQ4AN8YaXkn5p4Q6AW74bZv.svg" />
 </a>
 
-# What Are Cheatsheets:❔
+# What Are Cheatsheets: ❓
 
 *Cheatsheets* are plain-text files with no file extension, and are named
 according to the command used to view them:
@@ -44,7 +44,7 @@ and customizing color schemes, check out the official GitHub page: 🔗 [cheat](
 ### Install `cheat` on Debian-based Systems via `Snap`: 
 <details>
   
-<summary>🖱Click here to expand</summary>
+<summary>🖱 Click here to expand</summary>
 
 You can install `cheat` on Debian-based systems via Snap by running the following commands:
 
@@ -71,7 +71,7 @@ See the [releases page][releases] for a list of supported platforms.
 
 For further installation and configuration instructions, see the installation page over at the master branch for `cheat`, [INSTALLING.md][].
 
-# What Are Cheatsh33ts:❓ 
+# What Are Cheatsh33ts:❔ 
 These are my personal collection of Linux command-line *cheatsh33ts*. Each *cheatsh33t* is designed to be used with the `cheat` tool, which provides quick access to command references directly from the terminal.
 
 # Important: 📍
@@ -79,7 +79,7 @@ The *cheatsh33ts* in this repo are just my personal *cheatsh33ts*, not meant to 
 # Copy Cheatsh33ts:
 <details>
   
-<summary>🖱Click here to expand</summary>
+<summary>🖱 Click here to expand</summary>
 
 ## Manually:
 
