@@ -2,6 +2,8 @@
 
 # A Simple bash script to remove/copy/list all of the cheatsh33ts in your personal cheatsheet directory
 
+# This script is designed to streamline cheat sheet management while providing some interactive, colorful, and fun elements to the process.
+
 # Define color escape codes
 RED='\e[1;31m'
 GREEN='\e[1;32m'
