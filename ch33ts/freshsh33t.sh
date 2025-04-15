@@ -13,7 +13,7 @@ PURPLE='\e[1;35m'
 WHITE='\e[1;37m'
 
 # PERSONAL_DIR Variable. After the = Replace with output from cheat -d
-PERSONAL_DIR=/home/douglas/snap/cheat/common/.config/cheat/cheatsheets/personal
+PERSONAL_DIR=<ADD-DIRECTORY-HERE>
 
 if ! command -v lolcat &> /dev/null; then
     echo "lolcat not found. Please install it with: apt install lolcat"
@@ -118,9 +118,6 @@ echo -e "${RESET}"
 }
 
 # Function for copy_sheets
-# PERSONAL_DIR Variable. After the = Replace with output from cheat -d
-PERSONAL_DIR=/home/douglas/snap/cheat/common/.config/cheat/cheatsheets/personal
-
 copy_sheets() {
 # Check if the destination directory was found
 if [[ ! -d "$PERSONAL_DIR" ]]; then
@@ -165,8 +162,6 @@ done
 remove_sheets() {
 
 # First determine personal cheatsh33t directory
-#PERSONAL_DIR="$(find ~ -depth -name personal)"
-PERSONAL_DIR=/home/douglas/snap/cheat/common/.config/cheat/cheatsheets/personal
 
 # First verify that these are the cheatsheets you want to remove
 echo -e "${RED}These are the cheatsh33ts that will be removed...${RESET} " 
