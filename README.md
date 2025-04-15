@@ -97,19 +97,37 @@ Copy over each cheatsh33t:
 ```
 ## Automate With Bash Script:
 
-You can use the `cheatcopy.sh` Bash script to automatically copy over all of the `cheatsh33ts`. Make sure that the script is in the same directory as the cheatsh33ts you plan on copying over...
+You can use the `freshsh33t.sh` Bash script to automatically copy over all of the `cheatsh33ts`. Make sure that the script is in the same directory as the cheatsh33ts you plan on copying over...
 
 Make the script executable:
 ```bash
-   chmod +x cheatcopy.sh
+   chmod +x freshsh33t.sh
 ```
 Now simply run the Bash script:
 ```bash
-   ./cheatcopy.sh
+   ./freshsh33t.sh
 ```
-If the script gives you any issues, try replacing the `DEST_DIR` environment variable with the real path to your `personal` directory.
-
-## Finally, if you need to delete the sh33ts: 
+You must add the path to your personal cheetsh33t directory to the `PERSONAL_DIR` variable in order to use the script.
+Determine the path
+```bash
+   cheat -d
+   /home/user/.config/cheat/cheatsheets/personal
+```
+Open up `freshsh33t.sh` and look for line 16:
+```bash
+   nano freshsh33t.sh
+15 # PERSONAL_DIR Variable. After the = Replace with output from cheat -d
+16 PERSONAL_DIR=/home/user/.config/cheat/cheatsheets/personal
+```
+To copy over all of the cheatsh33ts at once:
+```bash
+   ./freshch33ts.sh --copy
+```
+To remove all of the cheatsh33ts inside of the personal directory
+```bash
+   ./freshsh33t.sh --remove
+```
+## To manually delete cheatsh33ts: 
 Determine the path to the personal directory:
 ```bash
    cheat -d
@@ -133,7 +151,7 @@ d0cker         /home/user/.config/cheat/cheatsheets/personal/d0cker          per
 ```
 </details>
 
-For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/syntax.cheatsheet.txt) file that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal. 
+For your reference, I’ve included a cheatsh33t called ![syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/syntax) that outlines the basic syntax for creating cheatsheet headers. These headers let you assign 'tags' to each sheet, making it easier to search, reference, and access specific sections of a cheatsheet directly from the terminal. 
 
 >**💡Tip:**
 >You can edit & create cheatsh33ts 'on the fly' using `nano` instead of `vim` which is the default editor used by `cheat`. Instead of running `cheat -e foo`, use `nano` with the full path:
@@ -163,7 +181,7 @@ For your reference, I’ve attached a ![syntax](https://github.com/DouglasFreshH
        
 [INSTALLING.md]: https://github.com/cheat/cheat/blob/master/INSTALLING.md
 [cheatsheets]:   https://github.com/cheat/cheatsheets
-
+[releases]: https://github.com/cheat/cheat/releases
 
 
 <!--
