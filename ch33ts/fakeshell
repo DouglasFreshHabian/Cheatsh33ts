@@ -1,0 +1,88 @@
+---
+syntax: bash
+tags: [ shell, personal ]
+---
+
+,---,---,---,---,---,---,---,---,---,---,---,---,---,-------,
+| ~ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | [ | ] | <-    |
+|---'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-----|
+| ->| | " | , | . | P | Y | F | G | C | R | L | / | = |  \  |
+|-----',--',--',--',--',--',--',--',--',--',--',--',--'-----|
+| Caps | A | O | E | U | I | D | H | T | N | S | - |  Enter |
+|------'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'-,-'--------|
+|        | ; | Q | J | K | X | B | M | W | V | Z |          |
+|------,-',--'--,'---'---'---'---'---'---'-,-'---',--,------|
+| ctrl |  | alt |       Fake Shell         | alt  |  | ctrl |
+'------'  '-----'--------------------------'------'  '------'
+                         
+
+
+# Linux Fake Shell Detection Cheatsheet
+
+# 1. Check Shell Type and Path
+echo $0               # Displays the current shell (e.g., bash, zsh)
+which $0              # Verify the path to the shell (e.g., /bin/bash)
+
+# 2. Check Running Processes
+ps aux                # List all running processes
+ps -p $$              # Show details of the current shell process
+
+# 3. Check for Shell Hijacking
+sha256sum $(which bash)   # Compare the hash of the shell binary
+
+# 4. Check .bashrc or .profile for Suspicious Changes
+cat ~/.bashrc
+cat ~/.profile
+cat ~/.bash_profile
+
+# 5. Verify the Integrity of $PATH
+echo $PATH            # Ensure PATH contains legitimate directories (e.g., /usr/bin)
+
+# 6. Check for Suspicious Aliases
+alias                 # List all aliases (check for unexpected aliases)
+
+# 7. Check sudo or su Commands for Tampering
+which sudo            # Should return /usr/bin/sudo or similar
+which su              # Should return /bin/su or similar
+
+# 8. Audit .bash_history for Missing Commands
+cat ~/.bash_history   # Check if history is altered or missing entries
+history               # List history; check for unexpected gaps
+
+# 9. Check for Cron Jobs or Suspicious Scheduled Tasks
+crontab -l            # List current user's cron jobs
+sudo crontab -l -u root   # List root's cron jobs
+cat /etc/crontab      # Check system-wide cron jobs
+ls /etc/cron.d/       # Check for additional cron jobs
+
+# 10. Use File Integrity Checkers
+
+# AIDE Installation and Use:
+sudo apt-get install aide      # Install AIDE (on Debian/Ubuntu-based systems)
+sudo aideinit                 # Initialize AIDE database
+sudo aide --check             # Check for file integrity changes
+
+# Compare with Known Good Backups
+- Compare critical files like /bin/bash, /bin/sh, /etc/passwd, /etc/sudoers with known good backups to detect changes.
+
+- Use Recovery Mode to Inspect the System
+
+- Boot from a live USB or recovery mode to inspect the system without executing malicious processes.
+
+# Additional Checks for Advanced Users:
+
+# Verify installed packages (ensure no rogue packages are installed):
+dpkg -l                 # List installed packages
+dpkg -l | grep <package_name>  # Search for specific package
+
+# Check kernel version (verify it's as expected):
+uname -r
+
+# Use strace to trace system calls (check if commands are intercepted):
+strace -e trace=execve <command>   # Trace system calls of a command
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/
+github.com/DouglasFreshHabian
