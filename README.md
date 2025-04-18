@@ -174,7 +174,8 @@ For your reference, I’ve included a cheatsh33t called ![syntax](https://github
 - [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/process)                   investigating processes on linux                                                                                                                                                                          
 - [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/nmcli)                       manage connections with NetworkManager                                                                                                                                                                      
 - [x] [figlet](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/figlet)                     every single figlet font using 'fresh' as the example
-- [x] [boxes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/boxes)                       every single box using fresh for the font inside the box                                           
+- [x] [boxes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/boxes)                       every single box using fresh for the font inside the box
+- [x] [fakeshell](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/fakeshell)               commands to investigate if you are using a fake shell                       
 - [ ] [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                               commands used on alfa adapters  
 - [ ] [?](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                                  suggestions welcome...
 
