@@ -1,0 +1,259 @@
+---
+syntax: bash
+tags: [ syntax, personal ]
+---
+
+                       .,,uod8B8bou,,.
+              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.
+         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||
+         !...:!TVBBBRPFT||||||||||!!^^""'   ||||
+         !.......:!?|||||!!^^""'            ||||
+         !.........||||                     ||||
+         !.........||||  ##                 ||||
+         !.........||||                     ||||
+         !.........||||                     ||||
+         !.........||||                     ||||
+         !.........||||                     ||||
+         `.........||||                    ,||||
+          .;.......||||               _.-!!|||||
+   .,uodWBBBBb.....||||       _.-!!|||||||||!:'
+!YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....
+!..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.
+!....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.
+!......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^"`;:::       `.
+!........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.
+`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo.
+  `..........:::::::::::::::::::::::;iof688888888888b.     `YBBBP^'
+    `........::::::::::::::::;iof688888888888888888888b.     `
+      `......:::::::::;iof688888888888888888888888888888b.
+        `....:::;iof688888888888888888888888888888888899fT!
+          `..::!8888888888888888888888888888888899fT|!^"'
+            `' !!988888888888888888888888899fT|!^"'
+                `!!8888888888888888899fT|!^"'
+                  `!988888888899fT|!^"'
+                    `!9899fT|!^"'
+                      `!^"'
+
+
+
+# Network Configuration Commands
+
+# Displays the hostname of the current system.
+hostname
+
+# Displays and allows you to configure network interfaces, routing, and tunnels.
+ip 
+
+# Shows the IP addresses assigned to network interfaces.
+ip addr show 
+
+# Shows and lets you set up wireless network interfaces.
+iwconfig 
+
+# Connects the wlan0 interface to the WiFi network named "WiFiName".
+iwconfig wlan0 essid "WiFiName"
+
+# Sets up network interfaces using YAML configuration files.
+netplan 
+
+# Applies network settings from the YAML files.
+netplan apply
+
+# Shows and configures the network interfaces on the current system.
+ifconfig 
+
+# Displays information about the eth0 interface.
+ifconfig eth0
+
+# Checks the current setup and settings of network interfaces.
+ifquery 
+
+# Lists all network interfaces and their settings.
+ifquery --list 
+
+# Reports the network status, manages and configures the network connections and controls the NetworkManager tool.
+nmcli 
+
+# Lists available WiFi networks.
+nmcli dev wifi list 
+
+# Activates a network interface that is currently inactive or down.
+ifup eth0 
+
+# Deactivates a network interface that is currently active or up.
+ifdown wlan0 
+
+# Automatically gets an IP address and other network configuration details from a DHCP server.
+dhclient eth0 
+
+# Network Connectivity Commands
+
+# Maps IP addresses to MAC addresses on a local network and manages the ARP cache.
+arp 
+
+# Shows the current ARP cache entries.
+arp 
+
+# Prints the ARP table entries.
+arp -a 
+
+# Removes all entries from the ARP table.
+arp -d 192.168.1.100 
+
+# Adds a new entry to the ARP table.
+arp -s 192.168.1.10 00:11:22:33:44:55 
+
+# Shows active network connections, routing information, and other network statistics.
+netstat -antp 
+
+# Prints the kernel's routing table.
+netstat -r 
+
+# Tests network connectivity between a host/client and server by sending data packets and measuring the response time.
+ping 8.8.8.8 
+
+# Configures the kernel's routing table entries.
+route add default gw 192.168.1.1 
+
+# Removes all routes from the routing table.
+route flush 
+
+# Displays the path and hops that packets take to reach a remote server.
+traceroute www.example.com 
+
+# Establishes the connection to the remote server or system through a TCP/IP network using the Telnet protocol.
+telnet 192.168.1.10 22 
+
+# Shows the information about users currently logged into the system.
+w 
+
+# Sends and receives email messages via the command line interface.
+mail -s "Hello" user@example.com 
+
+# Displays and filters network packet data based on a given regular expression pattern.
+ngrep -W byline "^GET" 
+
+# Displays and configures wireless network interface settings.
+iw dev wlan0 scan
+
+# DNS and Name Resolution Commands
+
+# Performs DNS lookups to resolve hostnames, IP addresses, mappings, or any specific DNS record.
+nslookup example.com 
+
+# Performs DNS lookups to resolve hostnames or IP addresses.
+host google.com 
+
+# Performs DNS lookups to query information about DNS name servers.
+dig @8.8.8.8 example.org 
+
+# Network Information Commands
+
+# Displays user login information on a remote system.
+finger user@example.com 
+
+# Retrieves information about domain ownership from various WHOIS servers.
+whois example.org 
+
+# Network Testing and Monitoring Commands
+
+# Assembles and analyzes TCP/IP packets, sends packets to a remote host, and examines the responses.
+hping3 -S -p 80 example.com 
+
+# Combines functionalities of traceroute and ping commands, continuously sends packets and shows the ping time for each hop.
+mtr google.com 
+
+# Allows reading and writing data across network connections.
+nc -l -p 8080 
+
+# Measures network latency and packet loss between two hosts, performs checks at set intervals.
+smokeping example.com 
+
+# Facilitates data transfer between two bidirectional byte streams.
+socat TCP4-LISTEN:8080,fork EXEC:/bin/bash 
+
+# Displays bandwidth usage in real-time.
+speedometer eth0 
+
+# Measures network performance by conducting a speed test.
+speedtest-cli 
+
+# Shows active network connections, socket statistics, and other network-related information.
+ss -tulpn 
+
+# Traces the route packets take, discovering the MTU along the path.
+tracepath example.net 
+
+# Network Analysis and Monitoring Commands
+
+# Captures and inspects network traffic in real-time for analysis.
+tcpdump -i eth0 port 80 
+
+# Discovers active hosts and services on a network, useful for security audits.
+nmap -sV example.com 
+
+# Displays real-time bandwidth consumption for individual network interfaces.
+bmon 
+
+# Monitors the current bandwidth utilization across multiple network interfaces.
+bwm-ng 
+
+# Shows real-time bandwidth usage broken down by individual connections.
+iftop 
+
+# Measures the network performance and throughput between two systems.
+iperf -c example.com 
+
+# Monitors and displays network traffic flows in real-time.
+iptraf-ng 
+
+# Tracks network traffic and bandwidth usage per process or application.
+nethogs 
+
+# Keeps historical records of network traffic statistics for selected interfaces, displaying hourly, daily, and monthly summaries.
+vnstat -i eth0 
+
+# Remote Access Commands
+
+# Establishes a secure encrypted shell session with a remote system over the SSH protocol.
+ssh user@example.com 
+
+# Securely copies files between the local and remote systems using the SSH protocol.
+scp file.txt user@example.com:/path/to/dir 
+
+# Securely transfers files between the hosts using the SFTP (SSH File Transfer Protocol).
+sftp user@example.com 
+
+# Security Commands
+
+# The firewall utility that manages the packet filtering and the Network Address Translation (NAT) rules.
+iptables -L 
+
+# An intrusion detection system that analyzes the network traffic for the suspicious activities.
+snort -dev 
+
+# Captures and analyzes network traffic data in a formatted text output.
+wireshark 
+
+# Manages the system's firewall, allowing you to add, delete, modify, or reset packet filtering rules.
+ufw allow 22/tcp 
+
+# Utility Commands
+
+# Transfers data to or from a server over various protocols.
+curl https://example.com 
+
+# Supports multiple protocols for downloading files from the internet.
+aria2c https://example.com/file.zip 
+
+# Modifies and queries settings of network interfaces, such as speed and other parameters.
+ethtool -s eth0 speed 1000 
+
+# A command-line utility for downloading files from the web.
+wget https://example.com/file.zip 
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/
+github.com/DouglasFreshHabian
