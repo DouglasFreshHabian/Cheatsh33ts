@@ -178,6 +178,7 @@ For your reference, I’ve included a cheatsh33t called ![syntax](https://github
 - [x] [fakeshell](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/fakeshell)               commands to investigate if you are using a fake shell
 - [x] [networking](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/networking)             linux networking commands and utilities
 - [x] [textprocessing](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/textprocessing)     sed, awk & grep commands for processing text
+- [x] [bashhistory](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/bashhistory)           commands & shortcuts related to bash history
 - [ ] [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                               commands used on alfa adapters  
 - [ ] [?](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                                  suggestions welcome...
 
