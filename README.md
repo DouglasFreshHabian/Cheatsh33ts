@@ -160,28 +160,34 @@ For your reference, I’ve included a cheatsh33t called ![syntax](https://github
    nano /home/user/.config/cheat/cheatsheets/personal/d0cker
 ```
 
-# Cheatsheets Included:                                                                               
-                                                                                                                              
-- [x] [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/adb)                           adb android commands                                                                         
-- [x] [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/countrycodes)         list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet)  
-- [x] [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/d0cker)                     docker commands                                                                              
-- [x] [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/drozer)                     drozer commands, android agent & drozer server, bug bounty                                   
-- [x] [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/firefox)                   commands to interact with firefox from linux command line                                    
-- [x] [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/mullvad)                   commands for interacting with mullvad cli                                                    
-- [x] [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/r3gex)                       miscellaneous commands using regex with grep, sed, awk, etc.                                 
-- [x] [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/syntax)                     show the syntax for the headers, yaml format                                                 
-- [x] [forensics](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/forensics)               commands to perform forensic analysis on Linux                                                                                                                                                                                                  
-- [x] [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/process)                   investigating processes on linux                                                                                                                                                                          
-- [x] [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/nmcli)                       manage connections with NetworkManager                                                                                                                                                                      
-- [x] [figlet](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/figlet)                     every single figlet font using 'fresh' as the example
-- [x] [boxes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/boxes)                       every single box using fresh for the font inside the box
-- [x] [fakeshell](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/fakeshell)               commands to investigate if you are using a fake shell
-- [x] [networking](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/networking)             linux networking commands and utilities
-- [x] [textprocessing](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/textprocessing)     sed, awk & grep commands for processing text
-- [x] [bashhistory](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/bashhistory)           commands & shortcuts related to bash history
-- [x] [castles](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/castles)                   nothing but ascii art castles... lots of castles!
-- [ ] [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                               commands used on alfa adapters  
-- [ ] [?](https://github.com/DouglasFreshHabian/Cheatsh33ts)                                                  suggestions welcome...
+---
+
+ # 🚀 Cheatsheets Included: 
+
+| Cheatsh33t | Description |
+|------------|-------------|                                                                                                                             
+|📱 [adb](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/adb)  |                          adb android commands |                                                                        
+|🌐 [countrycodes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/countrycodes)  |        list of country codes for countries with mullvad vnp servers (goes with mullvad cheatsheet) | 
+|🚢 [d0cker](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/d0cker)  |                    docker commands |                                                                             
+|🤖 [drozer](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/drozer)  |                    drozer commands, android agent & drozer server, bug bounty |                                  
+|🔥 [firefox](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/firefox)  |                  commands to interact with firefox from linux command line |                                   
+|🛡 [mullvad](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/mullvad)  |                  commands for interacting with mullvad cli |                                                   
+|➰ [r3gex](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/r3gex) |                      miscellaneous commands using regex with grep, sed, awk, etc. |                                
+|🔧 [syntax](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/syntax)  |                    show the syntax for the headers, yaml format |                                                
+|🕵 [forensics](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/forensics)   |              commands to perform forensic analysis on Linux |                                                                                          
+|🔎 [process](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/process)  |                  investigating processes on linux |                                                                                                         
+|📶 [nmcli](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/nmcli) |                      manage connections with NetworkManager |                                                                                                   
+|🧩 [figlet](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/figlet)  |                    every single figlet font using 'fresh' as the example |
+|🖼 [boxes](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/boxes)  |                      every single box using fresh for the font inside the box |
+|🐚 [fakeshell](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/fakeshell)  |              commands to investigate if you are using a fake shell |
+|🛰 [networking](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/networking)  |            linux networking commands and utilities |
+|🔠 [textprocessing](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/textprocessing)  |    sed, awk & grep commands for processing text |
+|📖 [bashhistory](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/bashhistory)  |          commands & shortcuts related to bash history |
+|🏰 [castles](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/castles)  |                  nothing but ascii art castles... lots of castles! |
+|📡 [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)  |                                              commands used on alfa adapters |
+|❓ [?](https://github.com/DouglasFreshHabian/Cheatsh33ts) |                                                 suggestions welcome... |
+---
+> 💡 Have an idea for a cheatsh33t? Let us know...
 
        
 [INSTALLING.md]: https://github.com/cheat/cheat/blob/master/INSTALLING.md
