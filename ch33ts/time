@@ -1,0 +1,95 @@
+---
+syntax: bash
+tags: [ time, ascii, personal ]
+---
+       ,--.-----.--.
+       |--|-----|--|
+       |--|     |--|
+       |  |-----|  |
+     __|--|     |--|__
+    /  |  |-----|  |  \
+   /   \__|-----|__/   \
+  /   ______---______   \/\
+ /   /  11  1 2 / 1  \   \/
+{   /10    TIME?     2\   }
+|  {     ,_.    /  ,_. }  |-,
+|  |9  {   }  O--{- } 3|  | |
+|  {   `-'  /    `-'   }  |-'
+{   \8   7 /     5   4/   }
+ \   `------_6_------'   /\
+  \     __|-----|__     /\/
+   \   /  |-----|  \   /
+    \  |--|     |--|  /
+     --|  |-----|  |--
+       |--|     |--|
+       |--|-----|--|
+       `--'-----`--'
+
+# TIME BASED COMMANDS
+
+# Basic Date Command:
+date +'%a %b %e %Y%n%I:%M %p		# Shows current date & time in a simple format
+
+# Using figlet + watch to refresh
+watch -t -n1 "date +%T|figlet"		# watch will refresh the time every second
+
+# Display time in the upper right of shell (not fish)
+while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-11));echo -e "\e[31m`date +%r`\e[39m";tput rc;done &
+
+# Install Zsh & Configure Time In Prompt
+sudo apt install zsh			# choose 0 when running for the first time
+
+# Zsh Shell Prompt Time (Dynamic Prompt):
+nano ~/.zsh
+
+```bash
+	setopt PROMPT_SUBST
+	PROMPT='%B%F{red}%n@%m%f%F{yellow}[%D{%L:%M:%S}]%f:%F{blue}${${(%):-%~}}%f$ %b'
+	TMOUT=1
+	TRAPALRM() {
+	    zle reset-prompt
+	}
+```
+
+# Source the .zsh configuration file
+source ~/.zshrc
+
+# Using Watch with Toilet for Time with Filters:
+watch -t -n0.1 "date +%rZone:[%Z]%n%A%n%b%d/%Y|toilet -t -s -W"
+watch -t -n0.001 "date +%rZone:[%Z]%n%A%n%b%d/%Y%nN=%N|toilet -t -s -W"
+watch -t -n0.001 "date +%rZone:[%Z]%n%A%n%b%d/%Y%nISO=%V-%G|toilet -t -s -W"
+watch -t -n0.005 "date +%rZone:[%Z]%n%A%n%b%d/%Y%nISO=%V-%G%nN=%N|toilet -t -s -W"
+
+# Debian-Chroot + Prompt Customization:
+export PROMPT_COMMAND='debian_chroot=$(date +%r)'		# putting the time command in debian chroot prompt
+
+# Persistent Time in Bottom of Terminal:
+while sleep 1;do tput sc;tput cup $(($(tput lines)-1)) 1;printf `date +%r`;tput rc;done &
+
+# Using python:
+https://github.com/delimitry/ascii_clock/blob/master/asciicanvas.py
+https://github.com/delimitry/ascii_clock/blob/master/clock.py
+
+# To View Clock in Terminal
+python3 clock.py
+
+# customizable Bash script that displays the current time in a variety of ASCII art styles:
+https://github.com/DouglasFreshHabian/AsciiTime
+
+# Make Scripts Executable:
+chmod +x *.sh
+
+# Pull Up Help Menu:
+./asciiTime.sh --help
+
+# List Various Themes:
+./asciiTime.sh --list
+
+# Run Hacker Theme:
+./asciiTime.sh --hacker
+
+  __  __                     __
+ / /_/ /  ___   ___ ___  ___/ /
+/ __/ _ \/ -_) / -_) _ \/ _  / 
+\__/_//_/\__/  \__/_//_/\_,_/
+github.com/DouglasFreshHabian
