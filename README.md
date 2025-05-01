@@ -184,6 +184,7 @@ For your reference, I’ve included a cheatsh33t called ![syntax](https://github
 |🔠 [textprocessing](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/textprocessing)  |    sed, awk & grep commands for processing text |
 |📖 [bashhistory](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/bashhistory)  |          commands & shortcuts related to bash history |
 |🏰 [castles](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/castles)  |                  nothing but ascii art castles... lots of castles! |
+|⌚️ [time](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/time)|                           commands, tools & scripts to display time in the terminal |
 |📡 [alfa](https://github.com/DouglasFreshHabian/Cheatsh33ts)  |                                              commands used on alfa adapters |
 |❓ [?](https://github.com/DouglasFreshHabian/Cheatsh33ts) |                                                 suggestions welcome... |
 ---
