@@ -28,7 +28,7 @@ tags: [ time, ascii, personal ]
 # TIME BASED COMMANDS
 
 # Basic Date Command:
-date +'%a %b %e %Y%n%I:%M %p		# Shows current date & time in a simple format
+date +'%a %b %e %Y%n%I:%M %p'		# Shows current date & time in a simple format
 
 # Using figlet + watch to refresh
 watch -t -n1 "date +%T|figlet"		# watch will refresh the time every second
