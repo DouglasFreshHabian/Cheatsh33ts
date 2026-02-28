@@ -1,0 +1,188 @@
+---
+syntax: bash
+tags: [ android, adb, automation ]
+---
+⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⢷⣤⣤⣴⣶⣶⣦⣤⣤⡾⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣿⣿⣉⣹⣿⣿⣿⣿⣏⣉⣿⣿⣧⠀⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⣠⣄⠀⢠⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⣤⡄⠀⣠⣄
+⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿
+⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿
+⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿
+⣿⣿⡇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿
+⠻⠟⠁⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠈⠻⠟
+⠀⠀⠀⠀⠉⠉⣿⣿⣿⡏⠉⠉⢹⣿⣿⣿⠉⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠉⠉⠁⠀
+# Android Debug Bridge — Input & KeyEvent Cheatsheet
+
+
+# -------------------------------------------------
+# BASIC KEYEVENT
+# -------------------------------------------------
+
+# Trigger a key using numeric code:
+adb shell input keyevent <code>
+
+# Example (HOME):
+adb shell input keyevent 3
+
+
+# -------------------------------------------------
+# TOUCH INPUT
+# -------------------------------------------------
+
+# Tap at coordinate (X Y):
+adb shell input tap X Y
+
+# Swipe:
+adb shell input swipe X1 Y1 X2 Y2
+
+# Swipe with duration (ms):
+adb shell input swipe X1 Y1 X2 Y2 300
+
+
+# -------------------------------------------------
+# CORE NAVIGATION KEYS
+# -------------------------------------------------
+
+# Home
+adb shell input keyevent 3
+
+# Back
+adb shell input keyevent 4
+
+# Call
+adb shell input keyevent 5
+
+# End Call
+adb shell input keyevent 6
+
+# Number Keys (0–9)
+# 0 = 7  |  1 = 8  | ... | 9 = 16
+adb shell input keyevent 7
+
+# Enter
+adb shell input keyevent 66
+
+# Delete
+adb shell input keyevent 67
+
+# Tab
+adb shell input keyevent 61
+
+# Escape
+adb shell input keyevent 111
+
+# App Switch (Recent Apps)
+adb shell input keyevent 187
+
+# Menu
+adb shell input keyevent 82
+
+# Power
+adb shell input keyevent 26
+
+
+# -------------------------------------------------
+# DIRECTIONAL PAD (FOCUS NAVIGATION)
+# -------------------------------------------------
+
+# Up
+adb shell input keyevent 19
+
+# Down
+adb shell input keyevent 20
+
+# Left
+adb shell input keyevent 21
+
+# Right
+adb shell input keyevent 22
+
+# Select / OK
+adb shell input keyevent 23
+
+
+# -------------------------------------------------
+# VOLUME & SYSTEM
+# -------------------------------------------------
+
+# Volume Up
+adb shell input keyevent 24
+
+# Volume Down
+adb shell input keyevent 25
+
+# Volume Mute
+adb shell input keyevent 164
+
+# Camera
+adb shell input keyevent 27
+
+# Notifications
+adb shell input keyevent 83
+
+# Settings
+adb shell input keyevent 176
+
+
+# -------------------------------------------------
+# GESTURE EXAMPLES
+# -------------------------------------------------
+
+# Scroll Up
+adb shell input swipe 500 1600 500 400
+
+# Scroll Down
+adb shell input swipe 500 400 500 1600
+
+# Long Press (same coordinate + duration)
+adb shell input swipe 600 1200 600 1200 800
+
+
+# -------------------------------------------------
+# SCREEN INFO
+# -------------------------------------------------
+
+# Get screen resolution:
+adb shell wm size
+
+# Output example:
+# Physical size: 1080x2400
+# Coordinates must stay within this range.
+
+
+# -------------------------------------------------
+# TEXT INPUT
+# -------------------------------------------------
+
+# Inject text (escape spaces):
+adb shell input text "Hello\ World"
+
+
+# -------------------------------------------------
+# FOCUS-BASED AUTOMATION (MORE PORTABLE)
+# -------------------------------------------------
+
+# TAB through UI
+adb shell input keyevent 61
+
+# ENTER / confirm
+adb shell input keyevent 66
+
+# Focus-based automation:
+# - More portable
+# - Resolution independent
+# - More stable across devices
+
+
+# -------------------------------------------------
+# FULL KEYEVENT INSPECTION
+# -------------------------------------------------
+
+# Inspect keycodes directly on device:
+adb shell getevent -l
