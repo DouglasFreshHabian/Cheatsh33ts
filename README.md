@@ -186,6 +186,7 @@ For your reference, I’ve included a cheatsh33t called ![syntax](https://github
 |🏰 [castles](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/castles)  |                  nothing but ascii art castles... lots of castles! |
 |⌚️ [time](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/time)|                           commands, tools & scripts to display time in the terminal |
 |⌨️ [keyevent](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/ch33ts/keyevent) |                 adb input and keyevent numerical codes
+|🕸 [on1ux](https://github.com/DouglasFreshHabian/Cheatsh33ts/blob/main/TLDR/on1ux.md) |                      install rust, compile, use and troubleshoot oniux
 |❓ [?](https://github.com/DouglasFreshHabian/Cheatsh33ts) |                                                 suggestions welcome... |
 ---
 > 💡 Have an idea for a cheatsh33t? Let us know...
